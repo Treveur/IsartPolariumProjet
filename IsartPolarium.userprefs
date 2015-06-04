@@ -1,0 +1,20 @@
+﻿<Properties StartupItem="IsartPolarium.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Entities\GameCase.cs">
+    <Files>
+      <File FileName="SceneManager.cs" Line="1" Column="1" />
+      <File FileName="Scenes\Level1.cs" Line="1" Column="1" />
+      <File FileName="Scenes\Level2.cs" Line="1" Column="1" />
+      <File FileName="Scenes\Level3.cs" Line="1" Column="1" />
+      <File FileName="Scenes\Level4.cs" Line="1" Column="1" />
+      <File FileName="Entities\GridCase.cs" Line="1" Column="1" />
+      <File FileName="Scenes\Victory.cs" Line="1" Column="1" />
+      <File FileName="Scenes\ChangeLevel.cs" Line="1" Column="1" />
+      <File FileName="Entities\GameCase.cs" Line="127" Column="68" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
