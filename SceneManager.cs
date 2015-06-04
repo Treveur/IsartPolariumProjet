@@ -18,6 +18,7 @@ namespace IsartPolarium
 
 		//Scene
 		public Level3 lvl3;
+		public Level4 lvl4;
 
 		public SceneManager (GraphicsDeviceManager _GDM, ContentManager _CM, SpriteBatch _SB)
 		{
@@ -50,14 +51,14 @@ namespace IsartPolarium
 			//AddScene (lvl2, 1);
 
 			//Level 3
-			//lvl3 = new Level3 (this);
-			//AddScene (lvl3, 2);
+			lvl3 = new Level3 (this);
+			AddScene (lvl3, 2);
 
 			//lvl3.sceneState = SceneState.SLEEP;
 
 			//Level 4
-			Level4 lvl4 = new Level4 (this);
-			AddScene (lvl4, 3);
+			//Level4 lvl4 = new Level4 (this);
+			//AddScene (lvl4, 3);
 
 			//Button;
 			//AddScene(new ChangeLevel (this), 1);

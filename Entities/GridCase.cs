@@ -178,6 +178,11 @@ namespace IsartPolarium
 			//victory verification
 			if (checkLineSameColor ()) {
 				Console.WriteLine("Gagne!!!");
+				if (_scene.sceneManager.lvl3.sceneState == SceneState.UPDATEDRAW) {
+					_scene.sceneManager.RemoveScene (2);
+					_scene.sceneManager.lvl4.sceneState = SceneState.UPDATEDRAW;
+				
+				}
 			}
 			base.Update (gameTime);
 		}
@@ -203,13 +208,15 @@ namespace IsartPolarium
 				//Browse grid horizontaly
 				for (int j = i; j < caseTab.Length; j+=width ) {
 
-					if (caseTab [j].actualState != GameCase.e_state.GRAY) {
+					if (caseTab [j].actualState != GameCase.e_state.GRAY && caseTab [j].actualState != GameCase.e_state.ON_DRAG) {
 
 						//check if each have the same color
 						if (check == e_state.GRAY) {
 							check = (e_state)caseTab [j].actualState;
-						} else if (check != (e_state)caseTab [j].actualState){
-							//Console.WriteLine ("Perdu");
+						} else if ((check != (e_state)caseTab [j].actualState) || 
+								(check == e_state.SPECIAL_FACE && caseTab[j].actualState == GameCase.e_state.SPECIAL_PILE) || 
+								(check == e_state.SPECIAL_PILE && caseTab[j].actualState == GameCase.e_state.SPECIAL_FACE)){
+							Console.WriteLine ("Perdu");
 							return false;
 						}
 							
