@@ -87,6 +87,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Entities\Player.cs" />
+    <Compile Include="Scenes\Level5.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Icon.png" />
