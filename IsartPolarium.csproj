@@ -88,6 +88,8 @@
     </Compile>
     <Compile Include="Entities\Player.cs" />
     <Compile Include="Scenes\Level5.cs" />
+    <Compile Include="Scenes\Level6.cs" />
+    <Compile Include="Scenes\Level7.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Icon.png" />
