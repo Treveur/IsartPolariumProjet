@@ -32,8 +32,8 @@ namespace IsartPolarium
 			_DScenes = new Dictionary<int, AScene> ();
 			_DScenesToAdd = new Dictionary<int, AScene> ();
 			_LScenesToRemove = new List<int> ();
-			graphics.PreferredBackBufferWidth = 720;  // set this value to the desired width of your window
-			graphics.PreferredBackBufferHeight = 1280;   // set this value to the desired height of your window
+			graphics.PreferredBackBufferWidth = 720/2;  // set this value to the desired width of your window
+			graphics.PreferredBackBufferHeight = 1280/2;   // set this value to the desired height of your window
 
 			//graphics.PreferredBackBufferWidth = 1280;  // set this value to the desired width of your window
 			//graphics.PreferredBackBufferHeight = 720;   // set this value to the desired height of your window
@@ -57,7 +57,7 @@ namespace IsartPolarium
 			//lvl3.sceneState = SceneState.SLEEP;
 
 			//Level 4
-			//Level4 lvl4 = new Level4 (this);
+			//lvl4 = new Level4 (this);
 			//AddScene (lvl4, 3);
 
 			//Button;

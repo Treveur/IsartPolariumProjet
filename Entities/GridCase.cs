@@ -178,12 +178,13 @@ namespace IsartPolarium
 			//victory verification
 			if (checkLineSameColor ()) {
 				Console.WriteLine("Gagne!!!");
-				if (_scene.sceneManager.lvl3.sceneState == SceneState.UPDATEDRAW) {
+				/*if (_scene.sceneManager.lvl3.sceneState == SceneState.UPDATEDRAW) {
 					_scene.sceneManager.RemoveScene (2);
 					_scene.sceneManager.lvl4.sceneState = SceneState.UPDATEDRAW;
 				
-				}
+				}*/
 			}
+
 			base.Update (gameTime);
 		}
 
@@ -206,21 +207,22 @@ namespace IsartPolarium
 				check = e_state.GRAY;
 
 				//Browse grid horizontaly
-				for (int j = i; j < caseTab.Length; j+=width ) {
+				for (int j = i; j < caseTab.Length; j+=heigth ) {
+
 
 					if (caseTab [j].actualState != GameCase.e_state.GRAY && caseTab [j].actualState != GameCase.e_state.ON_DRAG) {
+						Console.WriteLine (j +" "+ caseTab[j].actualState);
+
+						//Console.WriteLine("Ligne : " + i + " | Case :" + j /* + " && Etat : "+ caseTab[j].actualState */);
 
 						//check if each have the same color
 						if (check == e_state.GRAY) {
 							check = (e_state)caseTab [j].actualState;
-						} else if ((check != (e_state)caseTab [j].actualState) || 
-								(check == e_state.SPECIAL_FACE && caseTab[j].actualState == GameCase.e_state.SPECIAL_PILE) || 
-								(check == e_state.SPECIAL_PILE && caseTab[j].actualState == GameCase.e_state.SPECIAL_FACE)){
+						} else if ((check != (e_state)caseTab [j].actualState)){
 							Console.WriteLine ("Perdu");
 							return false;
-						}
-							
-						//Console.WriteLine("Ligne : " + i + " | Case :" + j);
+						}												
+
 					}
 
 				}
