@@ -209,19 +209,35 @@ namespace IsartPolarium
 				//Browse grid horizontaly
 				for (int j = i; j < caseTab.Length; j+=heigth ) {
 
+					e_state actualStateCase;
 
 					if (caseTab [j].actualState != GameCase.e_state.GRAY && caseTab [j].actualState != GameCase.e_state.ON_DRAG) {
 						Console.WriteLine (j +" "+ caseTab[j].actualState);
 
 						//Console.WriteLine("Ligne : " + i + " | Case :" + j /* + " && Etat : "+ caseTab[j].actualState */);
 
-						//check if each have the same color
+						if (caseTab [j].actualState == GameCase.e_state.SPECIAL_FACE) {
+							actualStateCase = e_state.PILE;
+						} else if (caseTab [j].actualState == GameCase.e_state.SPECIAL_PILE) {
+							actualStateCase = e_state.FACE;
+						} else {
+							actualStateCase = (e_state)caseTab [j].actualState;
+						}
+
 						if (check == e_state.GRAY) {
+							check = actualStateCase;
+						} else if ((check != actualStateCase)){
+							Console.WriteLine ("Perdu");
+							return false;
+						}
+
+						//check if each have the same color
+						/*if (check == e_state.GRAY) {
 							check = (e_state)caseTab [j].actualState;
 						} else if ((check != (e_state)caseTab [j].actualState)){
 							Console.WriteLine ("Perdu");
 							return false;
-						}												
+						}*/											
 
 					}
 
