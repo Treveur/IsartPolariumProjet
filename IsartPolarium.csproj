@@ -70,7 +70,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SceneManager.cs" />
     <Compile Include="Abstractions\AScene.cs" />
-    <Compile Include="Entities\Player.cs" />
     <Compile Include="Scenes\Level1.cs" />
     <Compile Include="Tools\AdvancedMouse.cs" />
     <Compile Include="Game1.cs" />
@@ -87,6 +86,7 @@
     <Compile Include="Abstractions\AEntity.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="Entities\Player.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Icon.png" />
@@ -96,6 +96,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Content\BCase.png" />
+    <None Include="Content\Character_Front_Static.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -142,6 +145,15 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Tile_SPE_PILE.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Character_Back.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Character_Left.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Character_Right.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Character_Front.png">

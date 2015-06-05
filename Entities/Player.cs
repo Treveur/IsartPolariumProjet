@@ -19,6 +19,7 @@ namespace IsartPolarium
 		public override void LoadContent()
 		{
 			LinkSprite ("Character_Front");
+			LinkSprite ("Character_Front");			LinkSprite ("Character_Front", 1, 4, 4, 250);
 			sprite.scale = 1f;
 			sprite.position = new Vector2 (_scene.sceneManager.graphics.PreferredBackBufferWidth / 2, _scene.sceneManager.graphics.PreferredBackBufferHeight / 2);
 			sprite.depth = 0f;
@@ -43,6 +44,7 @@ namespace IsartPolarium
 		{
 			//Permet de déterminer la position du Character
 			activePos = new Vector2(pos.X,pos.Y - 20);
+			Console.WriteLine (pos.X);
 		}
 		public override void Draw(GameTime gameTime)
 		{
