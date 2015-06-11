@@ -9,8 +9,8 @@ namespace IsartPolarium
 	{
 
 		Button playBtn;
-		Button closeGameBtn;
-		public GraphicsDeviceManager graphics;
+		//Button closeGameBtn;
+		public GraphicsDeviceManager graphics = new GraphicsDeviceManager(new Game());
 
 		public MainMenu (SceneManager _SM) : base(_SM)
 		{
@@ -19,11 +19,12 @@ namespace IsartPolarium
 		public override void Initialize()
 		{
 			playBtn = new Button (this, "play_btn");
-			playBtn.Position = new Vector2 (GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width/2, (GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height/2) - 100);
-			closeGameBtn = new Button (this, "quit_btn");
-			closeGameBtn.Position = new Vector2 (GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width/2, (GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height/2) + 100);
+			playBtn.Position = new Vector2 (graphics.PreferredBackBufferWidth/2, graphics.PreferredBackBufferWidth/2);
+			//closeGameBtn = new Button (this, "quit_btn");
+			//closeGameBtn.Position = new Vector2 (GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width/2, (GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height/2) + 100);
 
-			Console.WriteLine ("Width : " + GraphicsDeviceManager.GraphicsDevice.DisplayMode.Width + "Height :"+ GraphicsDeviceManager.GraphicsDevice.DisplayMode.Height);
+			//Console.WriteLine ("Width : " + screenSize.Width + "Height :"+screenSize.Height);
+			Console.WriteLine ("Width : "+ graphics.PreferredBackBufferWidth +"Height :" + graphics.PreferredBackBufferHeight);
 
 			base.Initialize ();
 		}
@@ -34,7 +35,7 @@ namespace IsartPolarium
 		public override void LoadContent()
 		{
 			AddEntity (playBtn);
-			AddEntity (closeGameBtn);
+			//AddEntity (closeGameBtn);
 
 
 			base.LoadContent ();
@@ -47,6 +48,13 @@ namespace IsartPolarium
 		/// <param name="gameTime">Game time.</param>
 		public override void Update (GameTime gameTime)
 		{
+
+			if (GetEntitiesNbr () == 0) {	
+				//Ajout de l'entité player sur la scene
+				//AddEntity (new Player (this));
+				Player pl = new Player (this);
+				AddEntity (pl);
+			}
 			/*if (ULvl1.changed || DLvl1.changed) {
 				ChangeSceneState (ULvl1._state, DLvl1._state, sceneManager.GetScene(1));
 				ULvl1.changed = false;

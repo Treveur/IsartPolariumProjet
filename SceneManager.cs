@@ -57,8 +57,8 @@ namespace IsartPolarium
 			//AddScene (lvl2, 1);
 
 			//Level 3
-			//lvl3 = new Level3 (this);
-			//AddScene (lvl3, 2);
+			lvl3 = new Level3 (this);
+			AddScene (lvl3, 2);
 
 			//lvl3.sceneState = SceneState.SLEEP;
 
@@ -79,8 +79,8 @@ namespace IsartPolarium
 			//lvl7 = new Level7 (this);
 			//AddScene (lvl7, 6);
 
-			mMenu = new MainMenu (this);
-			AddScene (mMenu, 6);
+			//mMenu = new MainMenu (this);
+			//AddScene (mMenu, 6);
 
 
 
