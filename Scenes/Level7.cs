@@ -60,7 +60,7 @@ namespace IsartPolarium
 				AddEntity (pl);
 
 				//Ajout de l'entité grille sur la scene
-				GridCase gc = new GridCase (this, 8, 8, levelstructure);
+				GridCase gc = new GridCase (this, 7, 8, levelstructure);
 				AddEntity (gc);
 
 			}

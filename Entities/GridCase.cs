@@ -23,7 +23,7 @@ namespace IsartPolarium
 			GRAY
 		}
 
-		public GraphicsDeviceManager graphics = new GraphicsDeviceManager(new Game());
+		public GraphicsDeviceManager graphics;
 
 
 		public override Vector2 Position {
@@ -180,7 +180,8 @@ namespace IsartPolarium
 			//victory verification
 			if (checkLineSameColor ()) {
 				Console.WriteLine("Gagne!!!");
-				Console.WriteLine ("Width : "+ graphics.PreferredBackBufferWidth +"Height :" + graphics.PreferredBackBufferHeight);
+				//Console.WriteLine ("Width : "+ graphics.PreferredBackBufferWidth +"Height :" + graphics.PreferredBackBufferHeight);
+				Console.WriteLine(GraphicsDeviceManager.DefaultBackBufferHeight);
 				/*if (_scene.sceneManager.lvl3.sceneState == SceneState.UPDATEDRAW) {
 					_scene.sceneManager.RemoveScene (2);
 					_scene.sceneManager.lvl4.sceneState = SceneState.UPDATEDRAW;

@@ -9,8 +9,8 @@ namespace IsartPolarium
 	{
 
 		Button playBtn;
-		//Button closeGameBtn;
-		public GraphicsDeviceManager graphics = new GraphicsDeviceManager(new Game());
+		Button closeGameBtn;
+		//GraphicsDeviceManager graphics;
 
 		public MainMenu (SceneManager _SM) : base(_SM)
 		{
@@ -18,13 +18,13 @@ namespace IsartPolarium
 
 		public override void Initialize()
 		{
-			playBtn = new Button (this, "play_btn");
-			playBtn.Position = new Vector2 (graphics.PreferredBackBufferWidth/2, graphics.PreferredBackBufferWidth/2);
-			//closeGameBtn = new Button (this, "quit_btn");
-			//closeGameBtn.Position = new Vector2 (GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width/2, (GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height/2) + 100);
+			playBtn = new Button (this, "playBtn");
+			playBtn.Position = new Vector2 (sceneManager.graphics.PreferredBackBufferWidth/2, (sceneManager.graphics.PreferredBackBufferHeight/2) + 55);
+			closeGameBtn = new Button (this, "quitBtn");
+			closeGameBtn.Position = new Vector2 (sceneManager.graphics.PreferredBackBufferWidth/2, (sceneManager.graphics.PreferredBackBufferHeight/2) -55);
 
 			//Console.WriteLine ("Width : " + screenSize.Width + "Height :"+screenSize.Height);
-			Console.WriteLine ("Width : "+ graphics.PreferredBackBufferWidth +"Height :" + graphics.PreferredBackBufferHeight);
+			//Console.WriteLine ("Width : "+ sceneManager.graphics.PreferredBackBufferWidth +" Height : " + sceneManager.graphics.PreferredBackBufferHeight);
 
 			base.Initialize ();
 		}
@@ -35,7 +35,7 @@ namespace IsartPolarium
 		public override void LoadContent()
 		{
 			AddEntity (playBtn);
-			//AddEntity (closeGameBtn);
+			AddEntity (closeGameBtn);
 
 
 			base.LoadContent ();
