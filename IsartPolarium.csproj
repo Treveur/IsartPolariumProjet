@@ -90,6 +90,7 @@
     <Compile Include="Scenes\Level5.cs" />
     <Compile Include="Scenes\Level6.cs" />
     <Compile Include="Scenes\Level7.cs" />
+    <Compile Include="Scenes\Level8.cs" />
     <Compile Include="Scenes\MainMenu.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -100,9 +101,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Content\BCase.png" />
-    <None Include="Content\Character_Front_Static.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -163,25 +161,7 @@
     <Content Include="Content\Character_Front.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\closeMenuBtn.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\menuBtn.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\nextBtn.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\playBtn.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\quitBtn.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\resetBtn.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\background.png">
+    <Content Include="Content\Character_Front_Static.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\background_small.png">

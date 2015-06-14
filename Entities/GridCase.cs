@@ -195,7 +195,7 @@ namespace IsartPolarium
 		{
 			
 			//Positionnement de la grille au milieu de la fenêtre de jeu
-			Position = new Vector2( (_scene.sceneManager.graphics.PreferredBackBufferWidth / 2) - ((caseTab[0].Size.X * width) / 2), (_scene.sceneManager.graphics.PreferredBackBufferHeight / 2) - ((caseTab[0].Size.X * width) / 2));
+			Position = new Vector2( (_scene.sceneManager.graphics.PreferredBackBufferWidth / 2) - ((caseTab[0].Size.X * width) / 2), (_scene.sceneManager.graphics.PreferredBackBufferHeight / 2) - ((caseTab[0].Size.Y * heigth) / 2));
 			Console.WriteLine ("Size.X = " + Position.X + ", Size.Y" + Size.Y);
 
 			Console.WriteLine (caseTab[8].Size);
@@ -275,14 +275,6 @@ namespace IsartPolarium
 				_scene.sceneManager.RemoveScene (1);
 				_scene.sceneManager.lvl3.sceneState = SceneState.UPDATEDRAW;
 			}
-
-			/*if (_scene.sceneManager.lvl1.sceneState == SceneState.UPDATEDRAW) {
-				_scene.sceneManager.RemoveScene (0);
-				_scene.sceneManager.lvl2.sceneState = SceneState.UPDATEDRAW;
-			} else if (_scene.sceneManager.lvl2.sceneState == SceneState.UPDATEDRAW) {
-				_scene.sceneManager.RemoveScene (1);
-				_scene.sceneManager.lvl3.sceneState = SceneState.UPDATEDRAW;
-			}*/
 
 			/*if (_scene.sceneManager.lvl3.sceneState == SceneState.UPDATEDRAW) {
 				_scene.sceneManager.RemoveScene (2);

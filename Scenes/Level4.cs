@@ -16,12 +16,13 @@ namespace IsartPolarium
 		///</summary>
 		int[,] levelstructure = 
 		{
-			{0, 0, 0, 0, 0, 0},
-			{0, 2, 1, 2, 1, 0},
-			{0, 1, 4, 2, 4, 0},
-			{0, 2, 1, 2, 1, 0},
-			{0, 2, 2, 1, 2, 0},
-			{0, 0, 0, 0, 0, 0}
+			{0, 0, 0, 0, 0, 0, 0},
+			{0, 1, 3, 1, 1, 1, 0},
+			{0, 2, 2, 2, 2, 2, 0},
+			{0, 1, 1, 1, 1, 1, 0},
+			{0, 2, 2, 2, 2, 2, 0},
+			{0, 1, 1, 1, 3, 1, 0},
+			{0, 0, 0, 0, 0, 0, 0}
 		};
 
 		public Level4 (SceneManager _SM) : base(_SM)
@@ -58,7 +59,7 @@ namespace IsartPolarium
 				AddEntity (pl);
 
 				//Ajout de l'entité grille sur la scene
-				GridCase gc = new GridCase (this, 6, 6, levelstructure);
+				GridCase gc = new GridCase (this, 7, 7, levelstructure);
 				//gc.Position = new Vector2(sceneManager.graphics.PreferredBackBufferWidth / 2, sceneManager.graphics.PreferredBackBufferHeight / 2);
 				AddEntity (gc);
 			}
