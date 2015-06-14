@@ -60,6 +60,8 @@ namespace IsartPolarium
 				//Ajout de l'entité player sur la scene
 				//AddEntity (new Player (this));
 				Player pl = new Player (this);
+				//pl.Position = new Vector2 (0f, 0f);
+
 				AddEntity (pl);
 
 				//Ajout de l'entité grille sur la scene

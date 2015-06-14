@@ -70,7 +70,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SceneManager.cs" />
     <Compile Include="Abstractions\AScene.cs" />
-    <Compile Include="Scenes\Level1.cs" />
     <Compile Include="Tools\AdvancedMouse.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Tools\Sprite.cs" />
@@ -78,20 +77,22 @@
     <Compile Include="Scenes\LevelButtons.cs" />
     <Compile Include="Entities\Button.cs" />
     <Compile Include="Entities\GameCase.cs" />
-    <Compile Include="Scenes\Level2.cs" />
-    <Compile Include="Scenes\Level3.cs" />
     <Compile Include="Scenes\Victory.cs" />
     <Compile Include="Scenes\ChangeLevel.cs" />
-    <Compile Include="Scenes\Level4.cs" />
     <Compile Include="Abstractions\AEntity.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Entities\Player.cs" />
-    <Compile Include="Scenes\Level5.cs" />
-    <Compile Include="Scenes\Level6.cs" />
-    <Compile Include="Scenes\Level7.cs" />
-    <Compile Include="Scenes\Level8.cs" />
-    <Compile Include="Scenes\MainMenu.cs" />
+    <Compile Include="Scenes\Level\Level1.cs" />
+    <Compile Include="Scenes\Level\Level2.cs" />
+    <Compile Include="Scenes\Level\Level3.cs" />
+    <Compile Include="Scenes\Level\Level4.cs" />
+    <Compile Include="Scenes\Level\Level5.cs" />
+    <Compile Include="Scenes\Level\Level6.cs" />
+    <Compile Include="Scenes\Level\Level7.cs" />
+    <Compile Include="Scenes\Level\Level8.cs" />
+    <Compile Include="Scenes\Interface\MainMenu.cs" />
+    <Compile Include="Scenes\Interface\InGameInterface.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Icon.png" />
@@ -111,9 +112,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\mouse.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Content\ship.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\UButton.png">
@@ -167,11 +165,20 @@
     <Content Include="Content\background_small.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\valider.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\resetBtn.png" />
+    <Content Include="Content\menuBtn.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Abstractions\" />
     <Folder Include="Entities\" />
     <Folder Include="Scenes\" />
     <Folder Include="Tools\" />
+    <Folder Include="Scenes\Interface\" />
+    <Folder Include="Scenes\Level\" />
   </ItemGroup>
 </Project>

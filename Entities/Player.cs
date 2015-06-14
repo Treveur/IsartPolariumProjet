@@ -63,12 +63,12 @@ namespace IsartPolarium
 			// Lance l'animation si l'on Drag (from GameCase)
 			if (s == "ON_DRAG") {
 				actualStateP = f_state.ON_DRAG;
-				Console.WriteLine (f_state.ON_DRAG);
+				//Console.WriteLine (f_state.ON_DRAG);
 			}
 			// Arrête l'animation avec le Drag (from GameCase)
 			if (s == "ON_RELEASE") {
 				actualStateP = f_state.ON_RELEASE;
-				Console.WriteLine (f_state.ON_RELEASE);
+				//Console.WriteLine (f_state.ON_RELEASE);
 			}
 
 		}

@@ -93,7 +93,6 @@ namespace IsartPolarium
 				for (int j = 0; j < heigth; j++)
 				{
 					
-					//Console.WriteLine (count);
 					caseTab[count] = new GameCase(scene);
 					scene.AddEntity(caseTab[count]);
 					caseTab[count].Position = new Vector2(_position.X + caseTab[count].Size.X + caseTab[count].Size.X * 2 * i,
@@ -140,8 +139,8 @@ namespace IsartPolarium
 		{
 			//Chargement et affichage bkg
 			bkg = new Sprite ("background_small");
-			bkg.position = new Vector2 (1f, 1f);
-
+			//bkg.position = new Vector2 (2f,2f);
+			bkg.scale = 2f;
 
 			bkg.depth = 1;
 			bkg.scale = 1f;
@@ -196,10 +195,6 @@ namespace IsartPolarium
 			
 			//Positionnement de la grille au milieu de la fenêtre de jeu
 			Position = new Vector2( (_scene.sceneManager.graphics.PreferredBackBufferWidth / 2) - ((caseTab[0].Size.X * width) / 2), (_scene.sceneManager.graphics.PreferredBackBufferHeight / 2) - ((caseTab[0].Size.Y * heigth) / 2));
-			Console.WriteLine ("Size.X = " + Position.X + ", Size.Y" + Size.Y);
-
-			Console.WriteLine (caseTab[8].Size);
-
 
 			//victory verification
 			if (checkLineSameColor ()) {
@@ -234,9 +229,7 @@ namespace IsartPolarium
 					e_state actualStateCase;
 
 					if (caseTab [j].actualState != GameCase.e_state.GRAY && caseTab [j].actualState != GameCase.e_state.ON_DRAG) {
-						Console.WriteLine (j +" "+ caseTab[j].actualState);
-
-						//Console.WriteLine("Ligne : " + i + " | Case :" + j /* + " && Etat : "+ caseTab[j].actualState */);
+						//Console.WriteLine (j +" "+ caseTab[j].actualState);
 
 						if (caseTab [j].actualState == GameCase.e_state.SPECIAL_FACE) {
 							actualStateCase = e_state.PILE;
@@ -265,6 +258,10 @@ namespace IsartPolarium
 		public void	changeScene(){
 			
 			//Console.WriteLine(_scene == _scene.sceneManager.GetScene(1));
+
+			//_scene.RemoveEntity(_scene.GetEntityByName("pl"))
+
+			//Console.WriteLine (_scene.);
 
 			if (_scene == _scene.sceneManager.GetScene (0)) {
 				Console.WriteLine ("trololol");

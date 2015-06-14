@@ -27,6 +27,7 @@ namespace IsartPolarium
 		//public Level8 lvl8;
 		//public MainMenu mMenu;
 		//public MainMenu mMenu;
+		public InGameInterface igInterface;
 
 		public SceneManager (GraphicsDeviceManager _GDM, ContentManager _CM, SpriteBatch _SB)
 		{
@@ -51,8 +52,8 @@ namespace IsartPolarium
 		public void LoadContent()
 		{
 			//Level 1
-			lvl1 = new Level1 (this);
-			AddScene (lvl1, 0);
+			//lvl1 = new Level1 (this);
+			//AddScene (lvl1, 0);
 
 			//Level 2
 			//Level2 lvl2 = new Level2 (this);
@@ -81,6 +82,10 @@ namespace IsartPolarium
 			//AddScene (lvl8, 7);
 
 			//mMenu = new MainMenu (this);
+
+			//InGame Interface
+			igInterface = new InGameInterface(this);
+			AddScene (igInterface, 8);
 
 			//Button;
 			//AddScene(new ChangeLevel (this), 1);

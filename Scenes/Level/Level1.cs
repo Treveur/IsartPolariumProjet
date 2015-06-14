@@ -69,6 +69,7 @@ namespace IsartPolarium
 				AddEntity (gc);
 
 			}
+
 			base.Update (gameTime);
 		}
 
