@@ -184,8 +184,10 @@ namespace IsartPolarium
 		{
 			
 			//Positionnement de la grille au milieu de la fenêtre de jeu
-			Position = new Vector2( (_scene.sceneManager.graphics.PreferredBackBufferWidth / 2) - (Size.X / 2), (_scene.sceneManager.graphics.PreferredBackBufferHeight / 2) - (Size.Y / 2));
+			Position = new Vector2( (_scene.sceneManager.graphics.PreferredBackBufferWidth / 2) - ((caseTab[0].Size.X * width) / 2), (_scene.sceneManager.graphics.PreferredBackBufferHeight / 2) - ((caseTab[0].Size.X * width) / 2));
 			Console.WriteLine ("Size.X = " + Position.X + ", Size.Y" + Size.Y);
+
+			Console.WriteLine (caseTab[8].Size);
 
 
 			//victory verification
