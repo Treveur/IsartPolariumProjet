@@ -193,11 +193,7 @@ namespace IsartPolarium
 			//victory verification
 			if (checkLineSameColor ()) {
 				Console.WriteLine("Gagne!!!");
-								/*if (_scene.sceneManager.lvl3.sceneState == SceneState.UPDATEDRAW) {
-					_scene.sceneManager.RemoveScene (2);
-					_scene.sceneManager.lvl4.sceneState = SceneState.UPDATEDRAW;
-				
-				}*/
+				changeScene ();
 			}
 
 			base.Update (gameTime);
@@ -264,6 +260,23 @@ namespace IsartPolarium
 			return true;
 		}
 
+		public void	changeScene(){
+			Console.WriteLine (_scene.sceneManager.lvl1.sceneState);
+
+			/*if (_scene.sceneManager.lvl1.sceneState == SceneState.UPDATEDRAW) {
+				_scene.sceneManager.RemoveScene (0);
+				_scene.sceneManager.lvl2.sceneState = SceneState.UPDATEDRAW;
+			} else if (_scene.sceneManager.lvl2.sceneState == SceneState.UPDATEDRAW) {
+				_scene.sceneManager.RemoveScene (1);
+				_scene.sceneManager.lvl3.sceneState = SceneState.UPDATEDRAW;
+			}*/
+
+			/*if (_scene.sceneManager.lvl3.sceneState == SceneState.UPDATEDRAW) {
+				_scene.sceneManager.RemoveScene (2);
+				_scene.sceneManager.lvl4.sceneState = SceneState.UPDATEDRAW;
+
+			}*/
+		}
 
 
 	}

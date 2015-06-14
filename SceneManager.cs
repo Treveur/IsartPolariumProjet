@@ -18,6 +18,7 @@ namespace IsartPolarium
 
 		//Scene
 		public Level1 lvl1;
+		public Level2 lvl2;
 		public Level3 lvl3;
 		public Level4 lvl4;
 		//public Level5 lvl5;
@@ -37,11 +38,11 @@ namespace IsartPolarium
 			_DScenes = new Dictionary<int, AScene> ();
 			_DScenesToAdd = new Dictionary<int, AScene> ();
 			_LScenesToRemove = new List<int> ();
-			//graphics.PreferredBackBufferWidth = 720;  // set this value to the desired width of your window
-			//graphics.PreferredBackBufferHeight = 1280;   // set this value to the desired height of your window
+			graphics.PreferredBackBufferWidth = 1200/2;  // set this value to the desired width of your window
+			graphics.PreferredBackBufferHeight = 1920/2;   // set this value to the desired height of your window
 
-			graphics.PreferredBackBufferWidth = 1280;  // set this value to the desired width of your window
-			graphics.PreferredBackBufferHeight = 720;   // set this value to the desired height of your window
+			//graphics.PreferredBackBufferWidth = 1280;  // set this value to the desired width of your window
+			//graphics.PreferredBackBufferHeight = 720;   // set this value to the desired height of your window
 			graphics.ApplyChanges();
 		}
 
