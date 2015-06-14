@@ -19,7 +19,7 @@ namespace IsartPolarium
 		SpriteBatch spriteBatch;
 
 		SceneManager sceneManager;
-		Texture2D mouse;
+		//Texture2D mouse;
 
 		public Game1 ()
 		{
@@ -53,7 +53,7 @@ namespace IsartPolarium
 		{
 			// Create a new SpriteBatch, which can be used to draw textures.
 			sceneManager.LoadContent();
-			mouse = Content.Load<Texture2D> ("mouse");
+			//mouse = Content.Load<Texture2D> ("mouse");
 			//TODO: use this.Content to load your game content here 
 		}
 
@@ -95,7 +95,7 @@ namespace IsartPolarium
 			graphics.GraphicsDevice.Clear (Color.CornflowerBlue);
 			spriteBatch.Begin (SpriteSortMode.BackToFront);
 			sceneManager.Draw (gameTime);
-			spriteBatch.Draw (mouse, new Vector2(Mouse.GetState().Position.X, Mouse.GetState().Position.Y), Color.White);
+			//spriteBatch.Draw (mouse, new Vector2(Mouse.GetState().Position.X, Mouse.GetState().Position.Y), Color.White);
 			spriteBatch.End ();
 			//TODO: Add your drawing code here
             

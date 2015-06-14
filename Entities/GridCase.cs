@@ -285,7 +285,7 @@ namespace IsartPolarium
 				Console.WriteLine ("Bite");
 				_scene.sceneManager.RemoveScene (5);
 				_scene.sceneManager.lvl3.sceneState = SceneState.UPDATEDRAW;
-			}
+			} 
 
 			/*if (_scene.sceneManager.lvl3.sceneState == SceneState.UPDATEDRAW) {
 				_scene.sceneManager.RemoveScene (2);

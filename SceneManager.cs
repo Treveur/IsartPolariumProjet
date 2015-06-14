@@ -26,10 +26,10 @@ namespace IsartPolarium
 		public Level2 lvl2;
 		public Level3 lvl3;
 		public Level4 lvl4;
-		//public Level5 lvl5;
-		//public Level6 lvl6;
-		//public Level7 lvl7;
-		//public Level8 lvl8;
+		public Level5 lvl5;
+		public Level6 lvl6;
+		public Level7 lvl7;
+		public Level8 lvl8;
 
 
 		public SceneManager (GraphicsDeviceManager _GDM, ContentManager _CM, SpriteBatch _SB)
@@ -47,29 +47,27 @@ namespace IsartPolarium
 			graphics.PreferredBackBufferWidth = 1200/2;  // set this value to the desired width of your window
 			graphics.PreferredBackBufferHeight = 1920/2;   // set this value to the desired height of your window
 
-			//graphics.PreferredBackBufferWidth = 1280;  // set this value to the desired width of your window
-			//graphics.PreferredBackBufferHeight = 720;   // set this value to the desired height of your window
 			graphics.ApplyChanges();
 		}
 
 		public void LoadContent()
 		{
 			//Main Menu
-			mMenu = new MainMenu (this);
-			AddScene (mMenu, 0);
+			//mMenu = new MainMenu (this);
+			//AddScene (mMenu, 0);
 
 			//Menu pause
-			pMenu = new PauseMenu (this);
-			AddScene (pMenu, 2);
+			//pMenu = new PauseMenu (this);
+			//AddScene (pMenu, 2);
 
-			pMenu.sceneState = SceneState.SLEEP;
+			//pMenu.sceneState = SceneState.SLEEP;
 
 			//InGame Interface
 			igInterface = new InGameInterface(this);
 			AddScene (igInterface, 3);
 
-			igInterface.sceneState = SceneState.SLEEP;
-
+			//igInterface.sceneState = SceneState.SLEEP;
+			//* A décommenter avant*//
 			//Level 1
 			//lvl1 = new Level1 (this);
 			//AddScene (lvl1, 4);
@@ -100,8 +98,8 @@ namespace IsartPolarium
 			//lvl7 = new Level7 (this);
 			//AddScene (lvl7, 6);
 
-			//lvl8 = new Level8 (this);
-			//AddScene (lvl8, 7);
+			lvl8 = new Level8 (this);
+			AddScene (lvl8, 7);
 
 
 

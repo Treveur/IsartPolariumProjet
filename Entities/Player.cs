@@ -50,9 +50,11 @@ namespace IsartPolarium
 
 		public override void Update(GameTime gameTime)
 		{
-			if (AdvancedMouse.OnClic ())
-				sprite.color = Color.Red;
-			else if (AdvancedMouse.OnDrag ())
+			/*if (AdvancedMouse.OnClic ())
+				//sprite.color = Color.Red;
+			else */
+
+			if (AdvancedMouse.OnDrag ())
 				sprite.position = new Vector2 (Mouse.GetState ().Position.X, Mouse.GetState ().Position.Y);
 			else if (AdvancedMouse.OnRelease ())
 				sprite.color = Color.White;

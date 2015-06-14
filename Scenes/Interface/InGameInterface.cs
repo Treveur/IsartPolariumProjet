@@ -8,7 +8,7 @@ namespace IsartPolarium
 	public class InGameInterface: AScene
 	{
 
-		Button validateBtn;
+		public Button validateBtn;
 		Button resetGameBtn;
 		Button menuBtn;
 		//GraphicsDeviceManager graphics;
@@ -58,6 +58,19 @@ namespace IsartPolarium
 				Player pl = new Player (this);
 				AddEntity (pl);
 			}
+
+
+			if (menuBtn.changed && AdvancedMouse.OnRelease ()) {
+				//Menu principale : 0
+				//ingame interface : 3
+				//Pause Menu :2
+
+				//Console.WriteLine (sceneManager.);
+			} else if(resetGameBtn.changed && AdvancedMouse.OnRelease ()){
+				Console.WriteLine ("Reset");
+			}
+
+
 			/*if (ULvl1.changed || DLvl1.changed) {
 				ChangeSceneState (ULvl1._state, DLvl1._state, sceneManager.GetScene(1));
 				ULvl1.changed = false;
@@ -96,6 +109,15 @@ namespace IsartPolarium
 				sceneToChange.sceneState = SceneState.UPDATE;
 			else if (upd == false && dra == false)
 				sceneToChange.sceneState = SceneState.SLEEP;
+		}
+
+		public void  validateLevel(AScene scene){
+			if (validateBtn.changed && AdvancedMouse.OnRelease()){
+				Console.WriteLine ("Je valide");
+				scene.
+				sceneManager.lvl1.sceneState = SceneState.DRAW;
+				//SwitchState (saveState);
+			}
 		}
 
 		/// <summary>

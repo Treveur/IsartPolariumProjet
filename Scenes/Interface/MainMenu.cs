@@ -72,7 +72,8 @@ namespace IsartPolarium
 				sceneManager.igInterface.sceneState = SceneState.UPDATEDRAW;
 
 			} else if (closeGameBtn.changed || AdvancedMouse.OnRelease ()) {
-				game.Quit ();
+				//Non fonctionnel
+				//game.Quit();
 			}
 
 			/*if (ULvl1.changed || DLvl1.changed) {
