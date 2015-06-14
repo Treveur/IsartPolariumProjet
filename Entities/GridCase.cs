@@ -10,6 +10,7 @@ namespace IsartPolarium
 		protected int heigth;
 
 		//window information
+		int halfOfscreenWidth, halfOfscreenHeight;
 
 
 		//Protected
@@ -84,9 +85,13 @@ namespace IsartPolarium
 		/// <param name="lvlstruc">Level structure.</param>
 		public GridCase (AScene scene, int newWidth, int newHeigth, int[,] lvlstruc) : base (scene)
 		{
-
+			//Nbr case
 			width = newWidth;
 			heigth = newHeigth;
+
+			//
+			halfOfscreenWidth = _scene.sceneManager.graphics.PreferredBackBufferWidth / 2;
+			halfOfscreenHeight = _scene.sceneManager.graphics.PreferredBackBufferHeight / 2;
 
 			levelStructure = lvlstruc;
 			caseTab = new GameCase[width * heigth];
@@ -194,18 +199,21 @@ namespace IsartPolarium
 		public override void Update(GameTime gameTime)
 		{
 			//Positionnement du backgroung
-			bkg.position.X = _scene.sceneManager.graphics.PreferredBackBufferWidth / 2;
-			bkg.position.Y = _scene.sceneManager.graphics.PreferredBackBufferHeight / 2;
+			bkg.position.X = halfOfscreenWidth;
+			bkg.position.Y = halfOfscreenHeight;
 
 			//Positionnement de la grille au milieu de la fenêtre de jeu
-			Position = new Vector2( (_scene.sceneManager.graphics.PreferredBackBufferWidth / 2) - ((caseTab[0].Size.X * width) / 2), (_scene.sceneManager.graphics.PreferredBackBufferHeight / 2) - ((caseTab[0].Size.Y * heigth) / 2));
+			Position = new Vector2( halfOfscreenWidth - ((caseTab[0].Size.X * width) / 2), halfOfscreenHeight - ((caseTab[0].Size.Y * heigth) / 2));
 
 			//victory verification
 			if (checkLineSameColor ()) {
+				
 				Console.WriteLine("Gagne!!!");
-				_scene.sceneState = SceneState.DRAW;
-				Player.MovePlayer (new Vector2());
+				//_scene.sceneState = SceneState.DRAW;
+				AdvancedMouse.OnClicState = false;
+				Player.MovePlayer (new Vector2(0, 0));
 				changeScene ();
+
 			}
 
 			base.Update (gameTime);
@@ -269,13 +277,13 @@ namespace IsartPolarium
 
 			//Console.WriteLine (_scene.);
 
-			if (_scene == _scene.sceneManager.GetScene (0)) {
+			if (_scene == _scene.sceneManager.GetScene (4)) {
 				Console.WriteLine ("trololol");
-				_scene.sceneManager.RemoveScene (0);
+				_scene.sceneManager.RemoveScene (4);
 				_scene.sceneManager.lvl2.sceneState = SceneState.UPDATEDRAW;
-			} else if (_scene == _scene.sceneManager.GetScene (1)) {
+			} else if (_scene == _scene.sceneManager.GetScene (5)) {
 				Console.WriteLine ("Bite");
-				_scene.sceneManager.RemoveScene (1);
+				_scene.sceneManager.RemoveScene (5);
 				_scene.sceneManager.lvl3.sceneState = SceneState.UPDATEDRAW;
 			}
 

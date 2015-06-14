@@ -101,6 +101,10 @@ namespace IsartPolarium
             
 			base.Draw (gameTime);
 		}
+
+		public void Quit(){
+			this.Exit();
+		}
 	}
 }
 

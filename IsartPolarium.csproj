@@ -93,6 +93,7 @@
     <Compile Include="Scenes\Level\Level8.cs" />
     <Compile Include="Scenes\Interface\MainMenu.cs" />
     <Compile Include="Scenes\Interface\InGameInterface.cs" />
+    <Compile Include="Scenes\Interface\PauseMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Icon.png" />
@@ -102,6 +103,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Content\BCase.png" />
+    <None Include="Content\blackPauseMenu.png" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -170,6 +172,12 @@
     </Content>
     <Content Include="Content\resetBtn.png" />
     <Content Include="Content\menuBtn.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\menuPrincipalBtn.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\returnBtn.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

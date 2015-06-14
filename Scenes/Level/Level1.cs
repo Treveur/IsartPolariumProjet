@@ -45,7 +45,7 @@ namespace IsartPolarium
 			
 			//Chargement niveau 2
 			sceneManager.lvl2 = new Level2 (sceneManager);
-			sceneManager.AddScene (sceneManager.lvl2, 1);
+			sceneManager.AddScene (sceneManager.lvl2, 5);
 			sceneManager.lvl2.sceneState = SceneState.SLEEP;
 
 			base.LoadContent ();

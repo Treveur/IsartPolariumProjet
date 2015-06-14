@@ -16,7 +16,12 @@ namespace IsartPolarium
 		Dictionary<int, AScene> _DScenesToAdd;
 		List<int> _LScenesToRemove;
 
-		//Scene
+		//Interface
+		public MainMenu mMenu;
+		public InGameInterface igInterface;
+		public PauseMenu pMenu;
+
+		//Level
 		public Level1 lvl1;
 		public Level2 lvl2;
 		public Level3 lvl3;
@@ -25,9 +30,7 @@ namespace IsartPolarium
 		//public Level6 lvl6;
 		//public Level7 lvl7;
 		//public Level8 lvl8;
-		//public MainMenu mMenu;
-		//public MainMenu mMenu;
-		public InGameInterface igInterface;
+
 
 		public SceneManager (GraphicsDeviceManager _GDM, ContentManager _CM, SpriteBatch _SB)
 		{
@@ -51,9 +54,28 @@ namespace IsartPolarium
 
 		public void LoadContent()
 		{
+			//Main Menu
+			mMenu = new MainMenu (this);
+			AddScene (mMenu, 0);
+
+			//Menu pause
+			pMenu = new PauseMenu (this);
+			AddScene (pMenu, 2);
+
+			pMenu.sceneState = SceneState.SLEEP;
+
+			//InGame Interface
+			igInterface = new InGameInterface(this);
+			AddScene (igInterface, 3);
+
+			igInterface.sceneState = SceneState.SLEEP;
+
 			//Level 1
-			lvl1 = new Level1 (this);
-			AddScene (lvl1, 0);
+			//lvl1 = new Level1 (this);
+			//AddScene (lvl1, 4);
+
+			//lvl1.sceneState = SceneState.SLEEP;
+
 
 			//Level 2
 			//Level2 lvl2 = new Level2 (this);
@@ -81,12 +103,14 @@ namespace IsartPolarium
 			//lvl8 = new Level8 (this);
 			//AddScene (lvl8, 7);
 
-			//mMenu = new MainMenu (this);
+
 
 			//InGame Interface
-			igInterface = new InGameInterface(this);
-			AddScene (igInterface, 8);
+			//igInterface = new InGameInterface(this);
+			//AddScene (igInterface, 8);
 
+
+			
 			//Button;
 			//AddScene(new ChangeLevel (this), 1);
 		}

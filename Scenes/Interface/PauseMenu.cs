@@ -5,29 +5,28 @@ using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 namespace IsartPolarium
 {
-	public class MainMenu: AScene
+	public class PauseMenu: AScene
 	{
-		//Button
-		Button playBtn;
-		Button closeGameBtn;
+		//Buttons
+		Button returnBtn;
+		Button principalMenuBtn;
+
+		Sprite blackBkg;
+		
 		//GraphicsDeviceManager graphics;
 
-		//Game1
-		Game1 game;
-
-		public MainMenu (SceneManager _SM) : base(_SM)
+		public PauseMenu (SceneManager _SM) : base(_SM)
 		{
 		}
 
 		public override void Initialize()
 		{
-			playBtn = new Button (this, "playBtn");
-			playBtn.Position = new Vector2 (sceneManager.graphics.PreferredBackBufferWidth/2, (sceneManager.graphics.PreferredBackBufferHeight/2) - 55);
-			closeGameBtn = new Button (this, "quitBtn");
-			closeGameBtn.Position = new Vector2 (sceneManager.graphics.PreferredBackBufferWidth/2, (sceneManager.graphics.PreferredBackBufferHeight/2) +55);
+			returnBtn = new Button (this, "returnBtn");
+			returnBtn.Position = new Vector2 ((sceneManager.graphics.PreferredBackBufferWidth / 2), (sceneManager.graphics.PreferredBackBufferHeight / 2) - 75);
 
-			//Console.WriteLine ("Width : " + screenSize.Width + "Height :"+screenSize.Height);
-			//Console.WriteLine ("Width : "+ sceneManager.graphics.PreferredBackBufferWidth +" Height : " + sceneManager.graphics.PreferredBackBufferHeight);
+			principalMenuBtn = new Button (this, "menuPrincipalBtn");
+			principalMenuBtn.Position = new Vector2 ((sceneManager.graphics.PreferredBackBufferWidth / 2), (sceneManager.graphics.PreferredBackBufferHeight / 2)+75);
+
 
 			base.Initialize ();
 		}
@@ -37,14 +36,15 @@ namespace IsartPolarium
 		/// </summary>
 		public override void LoadContent()
 		{
-			//Chargement du niveau 1
-			sceneManager.lvl1 = new Level1 (sceneManager);
-			sceneManager.AddScene (sceneManager.lvl1, 4);
-			sceneManager.lvl1.sceneState = SceneState.SLEEP;
+			//Chargement et affichage bkg
+			blackBkg = new Sprite ("blackPauseMenu");
 
-			AddEntity (playBtn);
-			AddEntity (closeGameBtn);
+			blackBkg.depth = 0.6f;
+			blackBkg.scale = 0.5f;
+			//AEntity.LinkSprite (blackBkg);
 
+			AddEntity (returnBtn);
+			AddEntity (principalMenuBtn);
 
 			base.LoadContent ();
 		}
@@ -63,18 +63,6 @@ namespace IsartPolarium
 				Player pl = new Player (this);
 				AddEntity (pl);
 			}
-
-			if (playBtn.changed && AdvancedMouse.OnRelease ()) {
-				Console.WriteLine ("Youpi");
-
-				sceneManager.mMenu.sceneState = SceneState.SLEEP;
-				sceneManager.lvl1.sceneState = SceneState.UPDATEDRAW;
-				sceneManager.igInterface.sceneState = SceneState.UPDATEDRAW;
-
-			} else if (closeGameBtn.changed || AdvancedMouse.OnRelease ()) {
-				game.Quit ();
-			}
-
 			/*if (ULvl1.changed || DLvl1.changed) {
 				ChangeSceneState (ULvl1._state, DLvl1._state, sceneManager.GetScene(1));
 				ULvl1.changed = false;
@@ -125,4 +113,3 @@ namespace IsartPolarium
 		}
 	}
 }
-
