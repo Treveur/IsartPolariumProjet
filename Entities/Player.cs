@@ -10,8 +10,14 @@ namespace IsartPolarium
 		public enum f_state
 		{
 			NONE,
-			ON_DRAG,
-			ON_RELEASE
+			ON_DRAG_DOWN,
+			ON_DRAG_UP,
+			ON_DRAG_RIGHT,
+			ON_DRAG_LEFT,
+			ON_RELEASE_DOWN,
+			ON_RELEASE_UP,
+			ON_RELEASE_RIGHT,
+			ON_RELEASE_LEFT
 		}
 
 		// Position du Player
@@ -60,17 +66,40 @@ namespace IsartPolarium
 		// Reception de GameCase Les bons états
 		public static void ChangePlayerState(string s)
 		{
-			// Lance l'animation si l'on Drag (from GameCase)
-			if (s == "ON_DRAG") {
-				actualStateP = f_state.ON_DRAG;
-				//Console.WriteLine (f_state.ON_DRAG);
+			// Lance l'une des animations avec le Drag
+			if (s == "ON_DRAG_DOWN") {
+				actualStateP = f_state.ON_DRAG_DOWN;
+				Console.WriteLine (f_state.ON_DRAG_DOWN);
 			}
-			// Arrête l'animation avec le Drag (from GameCase)
-			if (s == "ON_RELEASE") {
-				actualStateP = f_state.ON_RELEASE;
-				//Console.WriteLine (f_state.ON_RELEASE);
+			if (s == "ON_DRAG_UP") {
+				actualStateP = f_state.ON_DRAG_UP;
+				Console.WriteLine (f_state.ON_DRAG_UP);
 			}
-
+			if (s == "ON_DRAG_RIGHT") {
+				actualStateP = f_state.ON_DRAG_RIGHT;
+				Console.WriteLine (f_state.ON_DRAG_RIGHT);
+			}
+			if (s == "ON_DRAG_LEFT") {
+				actualStateP = f_state.ON_DRAG_LEFT;
+				Console.WriteLine (f_state.ON_DRAG_LEFT);
+			}
+			// Arrête l'animation avec la Release
+			if (s == "ON_RELEASE_DOWN") {
+				actualStateP = f_state.ON_RELEASE_DOWN;
+				Console.WriteLine (f_state.ON_RELEASE_DOWN);
+			}
+			if (s == "ON_RELEASE_UP") {
+				actualStateP = f_state.ON_RELEASE_UP;
+				Console.WriteLine (f_state.ON_RELEASE_UP);
+			}
+			if (s == "ON_RELEASE_RIGHT") {
+				actualStateP = f_state.ON_RELEASE_RIGHT;
+				Console.WriteLine (f_state.ON_RELEASE_RIGHT);
+			}
+			if (s == "ON_RELEASE_LEFT") {
+				actualStateP = f_state.ON_RELEASE_LEFT;
+				Console.WriteLine (f_state.ON_RELEASE_LEFT);
+			}
 		}
 		public static void MovePlayer(Vector2 pos)
 		{
@@ -90,15 +119,57 @@ namespace IsartPolarium
 			}
 
 			switch (actualStateP) {
-			case f_state.ON_DRAG:
+			case f_state.ON_DRAG_DOWN:
 				LinkSprite ("Character_Front", 1, 4, 4, 250);
 				sprite.depth = 0f;
 				Console.WriteLine ("Working");
 				previousStateP = actualStateP;
 				break;
 
-			case f_state.ON_RELEASE:
+			case f_state.ON_DRAG_UP:
+				LinkSprite ("Character_Back", 1, 4, 4, 250);
+				sprite.depth = 0f;
+				Console.WriteLine ("Working");
+				previousStateP = actualStateP;
+				break;
+
+			case f_state.ON_DRAG_RIGHT:
+				LinkSprite ("Character_Right", 1, 4, 4, 250);
+				sprite.depth = 0f;
+				Console.WriteLine ("Working");
+				previousStateP = actualStateP;
+				break;
+
+			case f_state.ON_DRAG_LEFT:
+				LinkSprite ("Character_Left", 1, 4, 4, 250);
+				sprite.depth = 0f;
+				Console.WriteLine ("Working");
+				previousStateP = actualStateP;
+				break;
+
+			case f_state.ON_RELEASE_DOWN:
 				LinkSprite ("Character_Front_Static");
+				sprite.depth = 0f;
+				Console.WriteLine ("Working");
+				previousStateP = actualStateP;
+				break;
+
+			case f_state.ON_RELEASE_UP:
+				LinkSprite ("Character_Back_Static");
+				sprite.depth = 0f;
+				Console.WriteLine ("Working");
+				previousStateP = actualStateP;
+				break;
+
+			case f_state.ON_RELEASE_RIGHT:
+				LinkSprite ("Character_Right_Static");
+				sprite.depth = 0f;
+				Console.WriteLine ("Working");
+				previousStateP = actualStateP;
+				break;
+
+			case f_state.ON_RELEASE_LEFT:
+				LinkSprite ("Character_Left_Static");
 				sprite.depth = 0f;
 				Console.WriteLine ("Working");
 				previousStateP = actualStateP;
