@@ -10,8 +10,7 @@ namespace IsartPolarium
 		protected int heigth;
 
 		//window information
-		int halfScreenWidth;
-		int halfScreenHeight;
+
 
 		//Protected
 		protected int[,] levelStructure;
@@ -85,13 +84,9 @@ namespace IsartPolarium
 		/// <param name="lvlstruc">Level structure.</param>
 		public GridCase (AScene scene, int newWidth, int newHeigth, int[,] lvlstruc) : base (scene)
 		{
-			//Nb case
+
 			width = newWidth;
 			heigth = newHeigth;
-
-			//
-			halfScreenWidth = _scene.sceneManager.graphics.PreferredBackBufferWidth / 2;
-			halfScreenHeight = _scene.sceneManager.graphics.PreferredBackBufferHeight / 2;
 
 			levelStructure = lvlstruc;
 			caseTab = new GameCase[width * heigth];
@@ -134,6 +129,12 @@ namespace IsartPolarium
 
 		public override void Initialize()
 		{
+			//Position.X = sceneManager.graphics.PreferredBackBufferWidth / 2;
+			//Position.Y = sceneManager.graphics.PreferredBackBufferWidth / 2;
+
+			//Position.X = graphics.PreferredBackBufferHeight;
+			//positonGrid = new Vector2( graphics.PreferredBackBufferHeight, graphics.PreferredBackBufferHeight);
+			
 			base.Initialize ();
 		}
 
@@ -193,21 +194,17 @@ namespace IsartPolarium
 		public override void Update(GameTime gameTime)
 		{
 			//Positionnement du backgroung
-			bkg.position.X = halfScreenWidth;
-			bkg.position.Y = halfScreenHeight;
+			bkg.position.X = _scene.sceneManager.graphics.PreferredBackBufferWidth / 2;
+			bkg.position.Y = _scene.sceneManager.graphics.PreferredBackBufferHeight / 2;
 
 			//Positionnement de la grille au milieu de la fenêtre de jeu
-			Position = new Vector2( halfScreenWidth - ((caseTab[0].Size.X * width) / 2), halfScreenHeight - ((caseTab[0].Size.Y * heigth) / 2));
+			Position = new Vector2( (_scene.sceneManager.graphics.PreferredBackBufferWidth / 2) - ((caseTab[0].Size.X * width) / 2), (_scene.sceneManager.graphics.PreferredBackBufferHeight / 2) - ((caseTab[0].Size.Y * heigth) / 2));
 
 			//victory verification
 			if (checkLineSameColor ()) {
 				Console.WriteLine("Gagne!!!");
-
-				//On reset la position du player et de la souris
-				AdvancedMouse.OnClicState = false;
-				//_scene.sceneState = SceneState.DRAW;
-
-				Player.activePos = (new Vector2(halfScreenWidth, halfScreenHeight));
+				_scene.sceneState = SceneState.DRAW;
+				Player.MovePlayer (new Vector2());
 				changeScene ();
 			}
 
@@ -273,13 +270,20 @@ namespace IsartPolarium
 			//Console.WriteLine (_scene.);
 
 			if (_scene == _scene.sceneManager.GetScene (0)) {
+				Console.WriteLine ("trololol");
 				_scene.sceneManager.RemoveScene (0);
 				_scene.sceneManager.lvl2.sceneState = SceneState.UPDATEDRAW;
 			} else if (_scene == _scene.sceneManager.GetScene (1)) {
+				Console.WriteLine ("Bite");
 				_scene.sceneManager.RemoveScene (1);
 				_scene.sceneManager.lvl3.sceneState = SceneState.UPDATEDRAW;
 			}
-				
+
+			/*if (_scene.sceneManager.lvl3.sceneState == SceneState.UPDATEDRAW) {
+				_scene.sceneManager.RemoveScene (2);
+				_scene.sceneManager.lvl4.sceneState = SceneState.UPDATEDRAW;
+
+			}*/
 		}
 
 

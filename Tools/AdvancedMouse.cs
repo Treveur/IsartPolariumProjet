@@ -6,9 +6,9 @@ namespace IsartPolarium
 {
 	static public class AdvancedMouse
 	{
-		public static bool OnClicState;
-		public static bool OnDragState;
-		public static bool OnReleaseState;
+		static bool OnClicState;
+		static bool OnDragState;
+		static bool OnReleaseState;
 
 		static public Rectangle hitBox;
 
