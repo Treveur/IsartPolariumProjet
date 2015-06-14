@@ -20,13 +20,13 @@ namespace IsartPolarium
 		public override void Initialize()
 		{
 			menuBtn = new Button (this, "menuBtn");
-			menuBtn.Position = new Vector2 ((sceneManager.graphics.PreferredBackBufferWidth/2) -  (sceneManager.graphics.PreferredBackBufferHeight) -55);
+			menuBtn.Position = new Vector2 ((50 + 40),  (50 + 40));
 
 			resetGameBtn = new Button (this, "resetBtn");
-			resetGameBtn.Position = new Vector2 (sceneManager.graphics.PreferredBackBufferWidth/2, (sceneManager.graphics.PreferredBackBufferHeight/2) -55);
+			resetGameBtn.Position = new Vector2 ((sceneManager.graphics.PreferredBackBufferWidth - 50) - 40, (50 + 40));
 
 			validateBtn = new Button (this, "valider");
-			validateBtn.Position = new Vector2 (sceneManager.graphics.PreferredBackBufferWidth/2, (sceneManager.graphics.PreferredBackBufferHeight/2) + 55);
+			validateBtn.Position = new Vector2 (sceneManager.graphics.PreferredBackBufferWidth/2, (sceneManager.graphics.PreferredBackBufferHeight) - 75 - 40);
 
 			base.Initialize ();
 		}

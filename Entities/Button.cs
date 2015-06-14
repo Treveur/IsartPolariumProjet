@@ -26,9 +26,9 @@ namespace IsartPolarium
 		public override void LoadContent()
 		{
 			LinkSprite (specialTexLink);
-			sprite.color = Color.Green;
+			sprite.color = Color.White;
 			sprite.scale = 0.5f;
-			sprite.depth = 1f;
+			sprite.depth = 0.1f;
 			base.LoadContent ();
 		}
 
@@ -38,7 +38,7 @@ namespace IsartPolarium
 				_state = !_state;
 				changed = true;
 				if (_state)
-					sprite.color = Color.Green;
+					sprite.color = Color.White;
 				else
 					sprite.color = Color.Red;
 			}

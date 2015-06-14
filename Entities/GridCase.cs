@@ -9,6 +9,9 @@ namespace IsartPolarium
 		protected int width;
 		protected int heigth;
 
+		//window information
+
+
 		//Protected
 		protected int[,] levelStructure;
 
@@ -139,10 +142,8 @@ namespace IsartPolarium
 		{
 			//Chargement et affichage bkg
 			bkg = new Sprite ("background_small");
-			//bkg.position = new Vector2 (2f,2f);
-			bkg.scale = 2f;
 
-			bkg.depth = 1;
+			bkg.depth = 0.6f;
 			bkg.scale = 1f;
 			LinkSprite (bkg);
 
@@ -192,13 +193,18 @@ namespace IsartPolarium
 
 		public override void Update(GameTime gameTime)
 		{
-			
+			//Positionnement du backgroung
+			bkg.position.X = _scene.sceneManager.graphics.PreferredBackBufferWidth / 2;
+			bkg.position.Y = _scene.sceneManager.graphics.PreferredBackBufferHeight / 2;
+
 			//Positionnement de la grille au milieu de la fenêtre de jeu
 			Position = new Vector2( (_scene.sceneManager.graphics.PreferredBackBufferWidth / 2) - ((caseTab[0].Size.X * width) / 2), (_scene.sceneManager.graphics.PreferredBackBufferHeight / 2) - ((caseTab[0].Size.Y * heigth) / 2));
 
 			//victory verification
 			if (checkLineSameColor ()) {
 				Console.WriteLine("Gagne!!!");
+				_scene.sceneState = SceneState.DRAW;
+				Player.MovePlayer (new Vector2());
 				changeScene ();
 			}
 

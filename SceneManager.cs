@@ -52,8 +52,8 @@ namespace IsartPolarium
 		public void LoadContent()
 		{
 			//Level 1
-			//lvl1 = new Level1 (this);
-			//AddScene (lvl1, 0);
+			lvl1 = new Level1 (this);
+			AddScene (lvl1, 0);
 
 			//Level 2
 			//Level2 lvl2 = new Level2 (this);
