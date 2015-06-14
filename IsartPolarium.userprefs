@@ -1,14 +1,46 @@
 ﻿<Properties StartupItem="IsartPolarium.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Entities\GameCase.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Scenes\Level\Level6.cs">
     <Files>
-      <File FileName="SceneManager.cs" Line="1" Column="1" />
-      <File FileName="Scenes\ChangeLevel.cs" Line="1" Column="1" />
-      <File FileName="Entities\GridCase.cs" Line="1" Column="1" />
-      <File FileName="Entities\GameCase.cs" Line="191" Column="22" />
-      <File FileName="Entities\Player.cs" Line="1" Column="1" />
-      <File FileName="Tools\AdvancedMouse.cs" Line="1" Column="1" />
+      <File FileName="SceneManager.cs" Line="66" Column="25" NotebookId="1" />
+      <File FileName="Entities\GridCase.cs" Line="243" Column="12" NotebookId="1" />
+      <File FileName="Entities\GameCase.cs" Line="100" Column="31" NotebookId="1" />
+      <File FileName="Scenes\Interface\PauseMenu.cs" Line="28" Column="153" NotebookId="1" />
+      <File FileName="Scenes\Interface\MainMenu.cs" Line="74" Column="38" NotebookId="1" />
+      <File FileName="Scenes\LevelButtons.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="Scenes\Interface\InGameInterface.cs" Line="71" Column="5" NotebookId="1" />
+      <File FileName="Entities\Button.cs" Line="43" Column="4" NotebookId="1" />
     </Files>
+    <FloatingWindows>
+      <FloatingWindow WindowId="1" X="-9" Y="-9" Width="1920" Height="1003">
+        <Files>
+          <File FileName="Scenes\Level\Level2.cs" Line="45" Column="4" />
+          <File FileName="Scenes\Level\Level3.cs" Line="45" Column="4" />
+          <File FileName="Scenes\Level\Level4.cs" Line="48" Column="21" />
+          <File FileName="Scenes\Level\Level5.cs" Line="45" Column="4" />
+          <File FileName="Scenes\Level\Level6.cs" Line="47" Column="21" />
+        </Files>
+      </FloatingWindow>
+    </FloatingWindows>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="IsartPolarium" expanded="True">
+            <Node name="IsartPolarium" expanded="True">
+              <Node name="Abstractions" expanded="True" />
+              <Node name="Entities" expanded="True" />
+              <Node name="Scenes" expanded="True">
+                <Node name="Interface" expanded="True" />
+                <Node name="Level" expanded="True">
+                  <Node name="Level6.cs" selected="True" />
+                </Node>
+              </Node>
+              <Node name="Tools" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

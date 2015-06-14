@@ -53,64 +53,54 @@ namespace IsartPolarium
 		public void LoadContent()
 		{
 			//Main Menu
-			//mMenu = new MainMenu (this);
-			//AddScene (mMenu, 0);
+			mMenu = new MainMenu (this);
+			AddScene (mMenu, 0);
 
 			//Menu pause
-			//pMenu = new PauseMenu (this);
-			//AddScene (pMenu, 2);
+			pMenu = new PauseMenu (this);
+			AddScene (pMenu, 2);
 
-			//pMenu.sceneState = SceneState.SLEEP;
+			pMenu.sceneState = SceneState.SLEEP;
 
 			//InGame Interface
 			igInterface = new InGameInterface(this);
 			AddScene (igInterface, 3);
 
-			//igInterface.sceneState = SceneState.SLEEP;
+			igInterface.sceneState = SceneState.SLEEP;
+
 			//* A décommenter avant*//
 			//Level 1
-			//lvl1 = new Level1 (this);
-			//AddScene (lvl1, 4);
+			lvl1 = new Level1 (this);
+			AddScene (lvl1, 4);
 
-			//lvl1.sceneState = SceneState.SLEEP;
+			lvl1.sceneState = SceneState.SLEEP;
 
 
 			//Level 2
 			//Level2 lvl2 = new Level2 (this);
-			//AddScene (lvl2, 1);
+			//AddScene (lvl2, 5);
 
 			//Level 3
 			//lvl3 = new Level3 (this);
-			//AddScene (lvl3, 2);
+			//AddScene (lvl3, 6);
 
 			//lvl3.sceneState = SceneState.SLEEP;
 
 			//Level 4
 			//lvl4 = new Level4 (this);
-			//AddScene (lvl4, 3);
+			//AddScene (lvl4, 7);
 
 			//lvl5 = new Level5 (this);
-			//AddScene (lvl5, 4);
+			//AddScene (lvl5, 8);
 
 			//lvl6 = new Level6 (this);
-			//AddScene (lvl6, 5);
+			//AddScene (lvl6, 9);
 
 			//lvl7 = new Level7 (this);
-			//AddScene (lvl7, 6);
+			//AddScene (lvl7, 10);
 
-			lvl8 = new Level8 (this);
-			AddScene (lvl8, 7);
-
-
-
-			//InGame Interface
-			//igInterface = new InGameInterface(this);
-			//AddScene (igInterface, 8);
-
-
-			
-			//Button;
-			//AddScene(new ChangeLevel (this), 1);
+			//lvl8 = new Level8 (this);
+			//AddScene (lvl8, 11);
 		}
 
 		public void Update(GameTime gameTime)

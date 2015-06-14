@@ -39,8 +39,8 @@ namespace IsartPolarium
 				changed = true;
 				if (_state)
 					sprite.color = Color.White;
-				else
-					sprite.color = Color.Red;
+				/*else
+					sprite.color = Color.Red;*/
 			}
 			base.Update (gameTime);
 		}

@@ -271,27 +271,37 @@ namespace IsartPolarium
 
 		public void	changeScene(){
 			
-			//Console.WriteLine(_scene == _scene.sceneManager.GetScene(1));
-
-			//_scene.RemoveEntity(_scene.GetEntityByName("pl"))
-
-			//Console.WriteLine (_scene.);
 
 			if (_scene == _scene.sceneManager.GetScene (4)) {
-				Console.WriteLine ("trololol");
+				Console.WriteLine ("lvl2");
 				_scene.sceneManager.RemoveScene (4);
 				_scene.sceneManager.lvl2.sceneState = SceneState.UPDATEDRAW;
 			} else if (_scene == _scene.sceneManager.GetScene (5)) {
-				Console.WriteLine ("Bite");
+				Console.WriteLine ("lvl3");
 				_scene.sceneManager.RemoveScene (5);
 				_scene.sceneManager.lvl3.sceneState = SceneState.UPDATEDRAW;
-			} 
-
-			/*if (_scene.sceneManager.lvl3.sceneState == SceneState.UPDATEDRAW) {
-				_scene.sceneManager.RemoveScene (2);
+			} if (_scene == _scene.sceneManager.GetScene (6)) {
+				Console.WriteLine ("lvl4");
+				_scene.sceneManager.RemoveScene (6);
 				_scene.sceneManager.lvl4.sceneState = SceneState.UPDATEDRAW;
-
-			}*/
+			} if (_scene == _scene.sceneManager.GetScene (7)) {
+				Console.WriteLine ("lvl5");
+				_scene.sceneManager.RemoveScene (7);
+				_scene.sceneManager.lvl5.sceneState = SceneState.UPDATEDRAW;
+			} if (_scene == _scene.sceneManager.GetScene (8)) {
+				Console.WriteLine ("lvl6");
+				_scene.sceneManager.RemoveScene (8);
+				_scene.sceneManager.lvl6.sceneState = SceneState.UPDATEDRAW;
+			} if (_scene == _scene.sceneManager.GetScene (9)) {
+				Console.WriteLine ("lvl7");
+				_scene.sceneManager.RemoveScene (9);
+				_scene.sceneManager.lvl7.sceneState = SceneState.UPDATEDRAW;
+			} if (_scene == _scene.sceneManager.GetScene (10)) {
+				Console.WriteLine ("lvl10");
+				_scene.sceneManager.RemoveScene (10);
+				_scene.sceneManager.lvl8.sceneState = SceneState.UPDATEDRAW;
+			} 
+				
 		}
 
 
