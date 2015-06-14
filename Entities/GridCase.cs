@@ -82,6 +82,7 @@ namespace IsartPolarium
 
 			width = newWidth;
 			heigth = newHeigth;
+
 			levelStructure = lvlstruc;
 			caseTab = new GameCase[width * heigth];
 			int count = 0;
@@ -124,6 +125,12 @@ namespace IsartPolarium
 
 		public override void Initialize()
 		{
+			//Position.X = sceneManager.graphics.PreferredBackBufferWidth / 2;
+			//Position.Y = sceneManager.graphics.PreferredBackBufferWidth / 2;
+
+			//Position.X = graphics.PreferredBackBufferHeight;
+			//positonGrid = new Vector2( graphics.PreferredBackBufferHeight, graphics.PreferredBackBufferHeight);
+			
 			base.Initialize ();
 		}
 
@@ -175,14 +182,16 @@ namespace IsartPolarium
 
 		public override void Update(GameTime gameTime)
 		{
-			Position = new Vector2(3f, 3f);
+			
+			//Positionnement de la grille au milieu de la fenêtre de jeu
+			Position = new Vector2( (_scene.sceneManager.graphics.PreferredBackBufferWidth / 2) - (Size.X / 2), (_scene.sceneManager.graphics.PreferredBackBufferHeight / 2) - (Size.Y / 2));
+			Console.WriteLine ("Size.X = " + Position.X + ", Size.Y" + Size.Y);
+
 
 			//victory verification
 			if (checkLineSameColor ()) {
 				Console.WriteLine("Gagne!!!");
-				//Console.WriteLine ("Width : "+ graphics.PreferredBackBufferWidth +"Height :" + graphics.PreferredBackBufferHeight);
-				Console.WriteLine(GraphicsDeviceManager.DefaultBackBufferHeight);
-				/*if (_scene.sceneManager.lvl3.sceneState == SceneState.UPDATEDRAW) {
+								/*if (_scene.sceneManager.lvl3.sceneState == SceneState.UPDATEDRAW) {
 					_scene.sceneManager.RemoveScene (2);
 					_scene.sceneManager.lvl4.sceneState = SceneState.UPDATEDRAW;
 				

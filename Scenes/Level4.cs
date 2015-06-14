@@ -59,6 +59,7 @@ namespace IsartPolarium
 
 				//Ajout de l'entité grille sur la scene
 				GridCase gc = new GridCase (this, 6, 6, levelstructure);
+				//gc.Position = new Vector2(sceneManager.graphics.PreferredBackBufferWidth / 2, sceneManager.graphics.PreferredBackBufferHeight / 2);
 				AddEntity (gc);
 			}
 			base.Update (gameTime);
