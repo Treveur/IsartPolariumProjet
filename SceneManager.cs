@@ -24,7 +24,7 @@ namespace IsartPolarium
 		//public Level5 lvl5;
 		//public Level6 lvl6;
 		//public Level7 lvl7;
-		//public MainMenu mMenu;
+		public MainMenu mMenu;
 
 		public SceneManager (GraphicsDeviceManager _GDM, ContentManager _CM, SpriteBatch _SB)
 		{
@@ -76,7 +76,7 @@ namespace IsartPolarium
 			//AddScene (lvl7, 6);
 
 			//mMenu = new MainMenu (this);
-			//AddScene (mMenu, 6);
+			//AddScene (mMenu, 0);
 
 
 

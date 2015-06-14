@@ -12,6 +12,8 @@ namespace IsartPolarium
 		//Protected
 		protected int[,] levelStructure;
 
+		Sprite bkg;
+
 		//enum e_state pour verification de la victoire
 		public enum e_state
 		{
@@ -136,6 +138,15 @@ namespace IsartPolarium
 
 		public override void LoadContent()
 		{
+			//Chargement et affichage bkg
+			bkg = new Sprite ("background_small");
+			bkg.position = new Vector2 (1f, 1f);
+
+
+			bkg.depth = 1;
+			bkg.scale = 1f;
+			LinkSprite (bkg);
+
 			base.LoadContent ();
 		}
 
@@ -240,28 +251,30 @@ namespace IsartPolarium
 						} else if ((check != actualStateCase)){
 							Console.WriteLine ("Perdu");
 							return false;
-						}
-
-						//check if each have the same color
-						/*if (check == e_state.GRAY) {
-							check = (e_state)caseTab [j].actualState;
-						} else if ((check != (e_state)caseTab [j].actualState)){
-							Console.WriteLine ("Perdu");
-							return false;
-						}*/											
+						}										
 
 					}
 
 				}
 
 			}
-			//Console.WriteLine ("C'est gagne");
 
 			return true;
 		}
 
 		public void	changeScene(){
-			Console.WriteLine (_scene.sceneManager.lvl1.sceneState);
+			
+			//Console.WriteLine(_scene == _scene.sceneManager.GetScene(1));
+
+			if (_scene == _scene.sceneManager.GetScene (0)) {
+				Console.WriteLine ("trololol");
+				_scene.sceneManager.RemoveScene (0);
+				_scene.sceneManager.lvl2.sceneState = SceneState.UPDATEDRAW;
+			} else if (_scene == _scene.sceneManager.GetScene (1)) {
+				Console.WriteLine ("Bite");
+				_scene.sceneManager.RemoveScene (1);
+				_scene.sceneManager.lvl3.sceneState = SceneState.UPDATEDRAW;
+			}
 
 			/*if (_scene.sceneManager.lvl1.sceneState == SceneState.UPDATEDRAW) {
 				_scene.sceneManager.RemoveScene (0);

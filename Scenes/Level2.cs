@@ -42,9 +42,9 @@ namespace IsartPolarium
 		/// </summary>
 		public override void LoadContent()
 		{
-			/*sceneManager.lvl3 = new Level3 (sceneManager);
-			sceneManager.AddScene (sceneManager.lvl2, 2);
-			sceneManager.lvl3.sceneState = SceneState.SLEEP;*/
+			sceneManager.lvl3 = new Level3 (sceneManager);
+			sceneManager.AddScene (sceneManager.lvl3, 2);
+			sceneManager.lvl3.sceneState = SceneState.SLEEP;
 
 			base.LoadContent ();
 		}
