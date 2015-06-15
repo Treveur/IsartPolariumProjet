@@ -57,12 +57,6 @@ namespace IsartPolarium
 		public override void Update (GameTime gameTime)
 		{
 
-			if (GetEntitiesNbr () == 0) {	
-				//Ajout de l'entité player sur la scene
-				//AddEntity (new Player (this));
-				Player pl = new Player (this);
-				AddEntity (pl);
-			}
 
 			if (playBtn.changed && AdvancedMouse.OnRelease ()) {
 				Console.WriteLine ("Youpi");
@@ -71,9 +65,9 @@ namespace IsartPolarium
 				sceneManager.lvl1.sceneState = SceneState.UPDATEDRAW;
 				sceneManager.igInterface.sceneState = SceneState.UPDATEDRAW;
 
-			} else if (closeGameBtn.changed || AdvancedMouse.OnRelease ()) {
+			} else if (closeGameBtn.changed && AdvancedMouse.OnRelease ()) {
 				//Non fonctionnel
-				//game.Quit();
+				game.Quit();
 			}
 
 			/*if (ULvl1.changed || DLvl1.changed) {

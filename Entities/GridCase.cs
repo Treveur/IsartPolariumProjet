@@ -16,8 +16,6 @@ namespace IsartPolarium
 		//Protected
 		protected int[,] levelStructure;
 
-		Sprite bkg;
-
 		//enum e_state pour verification de la victoire
 		public enum e_state
 		{
@@ -145,12 +143,6 @@ namespace IsartPolarium
 
 		public override void LoadContent()
 		{
-			//Chargement et affichage bkg
-			bkg = new Sprite ("background_small");
-
-			bkg.depth = 0.6f;
-			bkg.scale = 1f;
-			LinkSprite (bkg);
 
 			base.LoadContent ();
 		}
@@ -198,12 +190,9 @@ namespace IsartPolarium
 
 		public override void Update(GameTime gameTime)
 		{
-			//Positionnement du backgroung
-			bkg.position.X = halfOfscreenWidth;
-			bkg.position.Y = halfOfscreenHeight;
 
 			//Positionnement de la grille au milieu de la fenêtre de jeu
-			Position = new Vector2( halfOfscreenWidth - ((caseTab[0].Size.X * width) / 2), halfOfscreenHeight - ((caseTab[0].Size.Y * heigth) / 2));
+			Position = new Vector2( halfOfscreenWidth - ((caseTab[0].Size.X * width) / 2) - caseTab[0].Size.X/2, halfOfscreenHeight - ((caseTab[0].Size.Y * heigth) / 2)- caseTab[0].Size.Y/2);
 
 			//victory verification
 			if (checkLineSameColor ()) {
@@ -211,7 +200,9 @@ namespace IsartPolarium
 				Console.WriteLine("Gagne!!!");
 				//_scene.sceneState = SceneState.DRAW;
 				AdvancedMouse.OnClicState = false;
-				Player.MovePlayer (new Vector2(0, 0));
+
+
+				//Remove player
 				changeScene ();
 
 			}
@@ -256,7 +247,7 @@ namespace IsartPolarium
 						if (check == e_state.GRAY) {
 							check = actualStateCase;
 						} else if ((check != actualStateCase)){
-							Console.WriteLine ("Perdu");
+							//Console.WriteLine ("Perdu");
 							return false;
 						}										
 
@@ -273,31 +264,31 @@ namespace IsartPolarium
 			
 
 			if (_scene == _scene.sceneManager.GetScene (4)) {
-				Console.WriteLine ("lvl2");
+				//Console.WriteLine ("lvl2");
 				_scene.sceneManager.RemoveScene (4);
 				_scene.sceneManager.lvl2.sceneState = SceneState.UPDATEDRAW;
 			} else if (_scene == _scene.sceneManager.GetScene (5)) {
-				Console.WriteLine ("lvl3");
+				//Console.WriteLine ("lvl3");
 				_scene.sceneManager.RemoveScene (5);
 				_scene.sceneManager.lvl3.sceneState = SceneState.UPDATEDRAW;
 			} if (_scene == _scene.sceneManager.GetScene (6)) {
-				Console.WriteLine ("lvl4");
+				//Console.WriteLine ("lvl4");
 				_scene.sceneManager.RemoveScene (6);
 				_scene.sceneManager.lvl4.sceneState = SceneState.UPDATEDRAW;
 			} if (_scene == _scene.sceneManager.GetScene (7)) {
-				Console.WriteLine ("lvl5");
+				//Console.WriteLine ("lvl5");
 				_scene.sceneManager.RemoveScene (7);
 				_scene.sceneManager.lvl5.sceneState = SceneState.UPDATEDRAW;
 			} if (_scene == _scene.sceneManager.GetScene (8)) {
-				Console.WriteLine ("lvl6");
+				//Console.WriteLine ("lvl6");
 				_scene.sceneManager.RemoveScene (8);
 				_scene.sceneManager.lvl6.sceneState = SceneState.UPDATEDRAW;
 			} if (_scene == _scene.sceneManager.GetScene (9)) {
-				Console.WriteLine ("lvl7");
+				//Console.WriteLine ("lvl7");
 				_scene.sceneManager.RemoveScene (9);
 				_scene.sceneManager.lvl7.sceneState = SceneState.UPDATEDRAW;
 			} if (_scene == _scene.sceneManager.GetScene (10)) {
-				Console.WriteLine ("lvl10");
+				//Console.WriteLine ("lvl10");
 				_scene.sceneManager.RemoveScene (10);
 				_scene.sceneManager.lvl8.sceneState = SceneState.UPDATEDRAW;
 			} 

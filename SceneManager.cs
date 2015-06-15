@@ -30,6 +30,7 @@ namespace IsartPolarium
 		public Level6 lvl6;
 		public Level7 lvl7;
 		public Level8 lvl8;
+		public Bckg imgBack;
 
 
 		public SceneManager (GraphicsDeviceManager _GDM, ContentManager _CM, SpriteBatch _SB)
@@ -101,6 +102,9 @@ namespace IsartPolarium
 
 			//lvl8 = new Level8 (this);
 			//AddScene (lvl8, 11);
+
+			imgBack = new Bckg (this);
+			AddScene (imgBack, 12);
 		}
 
 		public void Update(GameTime gameTime)

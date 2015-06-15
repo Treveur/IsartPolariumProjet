@@ -67,7 +67,26 @@ namespace IsartPolarium
 
 				//Console.WriteLine (sceneManager.);
 			} else if(resetGameBtn.changed && AdvancedMouse.OnRelease ()){
-				Console.WriteLine ("Reset");
+				//Console.WriteLine ("Reset");
+
+				//Reset du level
+				if (sceneManager.lvl1.sceneState == SceneState.UPDATEDRAW) {
+					sceneManager.RemoveScene (4);
+					sceneManager.lvl1 = new Level1 (sceneManager);
+					sceneManager.AddScene (sceneManager.lvl1, 4);
+				} else if (sceneManager.lvl2.sceneState == SceneState.UPDATEDRAW) {
+					sceneManager.RemoveScene (5);
+					sceneManager.lvl2 = new Level2 (sceneManager);
+					sceneManager.AddScene (sceneManager.lvl1, 5);
+				} else if (sceneManager.lvl3.sceneState == SceneState.UPDATEDRAW) {
+				} else if (sceneManager.lvl4.sceneState == SceneState.UPDATEDRAW) {
+				} else if (sceneManager.lvl5.sceneState == SceneState.UPDATEDRAW) {
+				} else if (sceneManager.lvl6.sceneState == SceneState.UPDATEDRAW) {
+				} else if (sceneManager.lvl7.sceneState == SceneState.UPDATEDRAW) {
+				} else if (sceneManager.lvl8.sceneState == SceneState.UPDATEDRAW) {
+				}
+
+				resetGameBtn.changed = false;
 			}
 
 

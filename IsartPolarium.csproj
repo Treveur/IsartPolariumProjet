@@ -93,6 +93,8 @@
     <Compile Include="Scenes\Interface\MainMenu.cs" />
     <Compile Include="Scenes\Interface\InGameInterface.cs" />
     <Compile Include="Scenes\Interface\PauseMenu.cs" />
+    <Compile Include="Entities\Background.cs" />
+    <Compile Include="Scenes\Interface\Bckg.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Icon.png" />
@@ -159,6 +161,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\returnBtn.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\background.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
