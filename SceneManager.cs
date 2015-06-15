@@ -20,6 +20,8 @@ namespace IsartPolarium
 		public MainMenu mMenu;
 		public InGameInterface igInterface;
 		public PauseMenu pMenu;
+		public Bckg imgBack;
+		public BlackPause bPause;
 
 		//Level
 		public Level1 lvl1;
@@ -30,7 +32,7 @@ namespace IsartPolarium
 		public Level6 lvl6;
 		public Level7 lvl7;
 		public Level8 lvl8;
-		public Bckg imgBack;
+
 
 
 		public SceneManager (GraphicsDeviceManager _GDM, ContentManager _CM, SpriteBatch _SB)
@@ -105,6 +107,11 @@ namespace IsartPolarium
 
 			imgBack = new Bckg (this);
 			AddScene (imgBack, 12);
+
+			bPause = new BlackPause (this);
+			AddScene (bPause, 13);
+
+			bPause.sceneState = SceneState.SLEEP;
 		}
 
 		public void Update(GameTime gameTime)

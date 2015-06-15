@@ -95,6 +95,8 @@
     <Compile Include="Scenes\Interface\PauseMenu.cs" />
     <Compile Include="Entities\Background.cs" />
     <Compile Include="Scenes\Interface\Bckg.cs" />
+    <Compile Include="Entities\BlackBackground.cs" />
+    <Compile Include="Scenes\Interface\BlackPause.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Icon.png" />
@@ -104,7 +106,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Content\BCase.png" />
-    <None Include="Content\blackPauseMenu.png" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -164,6 +165,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\background.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\blackPauseMenu.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

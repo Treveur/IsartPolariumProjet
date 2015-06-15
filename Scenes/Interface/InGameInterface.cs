@@ -65,6 +65,31 @@ namespace IsartPolarium
 				//ingame interface : 3
 				//Pause Menu :2
 
+				if (sceneManager.lvl1.sceneState == SceneState.UPDATEDRAW) {
+					sceneManager.lvl1.sceneState = SceneState.DRAW;
+				} else if (sceneManager.lvl2.sceneState == SceneState.UPDATEDRAW) {
+					sceneManager.lvl2.sceneState = SceneState.DRAW;
+				} else if (sceneManager.lvl3.sceneState == SceneState.UPDATEDRAW) {
+					sceneManager.lvl3.sceneState = SceneState.DRAW;
+				} else if (sceneManager.lvl4.sceneState == SceneState.UPDATEDRAW) {
+					sceneManager.lvl4.sceneState = SceneState.DRAW;
+				} else if (sceneManager.lvl5.sceneState == SceneState.UPDATEDRAW) {
+					sceneManager.lvl5.sceneState = SceneState.DRAW;
+				} else if (sceneManager.lvl6.sceneState == SceneState.UPDATEDRAW) {
+					sceneManager.lvl6.sceneState = SceneState.DRAW;
+				} else if (sceneManager.lvl7.sceneState == SceneState.UPDATEDRAW) {
+					sceneManager.lvl7.sceneState = SceneState.DRAW;
+				} else if (sceneManager.lvl8.sceneState == SceneState.UPDATEDRAW) {
+					sceneManager.lvl8.sceneState = SceneState.DRAW;
+				}
+
+				if (sceneManager.bPause.sceneState == SceneState.SLEEP && sceneManager.pMenu.sceneState == SceneState.SLEEP && sceneState == SceneState.UPDATEDRAW) {
+					sceneManager.bPause.sceneState = SceneState.UPDATEDRAW;
+					sceneManager.pMenu.sceneState = SceneState.UPDATEDRAW;
+					sceneState = SceneState.SLEEP;
+				}
+
+
 				//Console.WriteLine (sceneManager.);
 			} else if(resetGameBtn.changed && AdvancedMouse.OnRelease ()){
 				//Console.WriteLine ("Reset");

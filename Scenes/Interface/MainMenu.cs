@@ -67,7 +67,7 @@ namespace IsartPolarium
 
 			} else if (closeGameBtn.changed && AdvancedMouse.OnRelease ()) {
 				//Non fonctionnel
-				game.Quit();
+				//game.Quit();
 			}
 
 			/*if (ULvl1.changed || DLvl1.changed) {

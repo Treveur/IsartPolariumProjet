@@ -28,7 +28,7 @@ namespace IsartPolarium
 			LinkSprite (specialTexLink);
 			sprite.color = Color.White;
 			sprite.scale = 0.5f;
-			sprite.depth = 0.1f;
+			sprite.depth = 0.3f;
 			base.LoadContent ();
 		}
 

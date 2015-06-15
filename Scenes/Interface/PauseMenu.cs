@@ -57,23 +57,56 @@ namespace IsartPolarium
 		public override void Update (GameTime gameTime)
 		{
 
-			if (GetEntitiesNbr () == 0) {	
-				//Ajout de l'entité player sur la scene
-				//AddEntity (new Player (this));
-				Player pl = new Player (this);
-				AddEntity (pl);
-			}
-			/*if (ULvl1.changed || DLvl1.changed) {
-				ChangeSceneState (ULvl1._state, DLvl1._state, sceneManager.GetScene(1));
-				ULvl1.changed = false;
-				DLvl1.changed = false;
+			if (returnBtn.changed && AdvancedMouse.OnReleaseState) {
+				
+				if (sceneManager.lvl1.sceneState == SceneState.DRAW) {
+					sceneManager.lvl1.sceneState = SceneState.UPDATEDRAW;
+				} else if (sceneManager.lvl2.sceneState == SceneState.DRAW) {
+					sceneManager.lvl2.sceneState = SceneState.UPDATEDRAW;
+				} else if (sceneManager.lvl3.sceneState == SceneState.DRAW) {
+					sceneManager.lvl3.sceneState = SceneState.UPDATEDRAW;
+				} else if (sceneManager.lvl4.sceneState == SceneState.DRAW) {
+					sceneManager.lvl4.sceneState = SceneState.UPDATEDRAW;
+				} else if (sceneManager.lvl5.sceneState == SceneState.DRAW) {
+					sceneManager.lvl5.sceneState = SceneState.UPDATEDRAW;
+				} else if (sceneManager.lvl6.sceneState == SceneState.DRAW) {
+					sceneManager.lvl6.sceneState = SceneState.UPDATEDRAW;
+				} else if (sceneManager.lvl7.sceneState == SceneState.DRAW) {
+					sceneManager.lvl7.sceneState = SceneState.UPDATEDRAW;
+				} else if (sceneManager.lvl8.sceneState == SceneState.DRAW) {
+					sceneManager.lvl8.sceneState = SceneState.UPDATEDRAW;
+				}
+
+				sceneManager.igInterface.sceneState = SceneState.UPDATEDRAW;
+				sceneState = SceneState.SLEEP;
+				sceneManager.bPause.sceneState = SceneState.SLEEP;
+
+
+			} else if(principalMenuBtn.changed && AdvancedMouse.OnReleaseState){
+				if (sceneManager.lvl1.sceneState == SceneState.DRAW) {
+					sceneManager.lvl1.sceneState = SceneState.SLEEP;
+				} else if (sceneManager.lvl2.sceneState == SceneState.DRAW) {
+					sceneManager.RemoveScene (5);
+				} else if (sceneManager.lvl3.sceneState == SceneState.DRAW) {
+					sceneManager.RemoveScene (6);
+				} else if (sceneManager.lvl4.sceneState == SceneState.DRAW) {
+					sceneManager.RemoveScene (7);
+				} else if (sceneManager.lvl5.sceneState == SceneState.DRAW) {
+					sceneManager.RemoveScene (8);
+				} else if (sceneManager.lvl6.sceneState == SceneState.DRAW) {
+					sceneManager.RemoveScene (9);
+				} else if (sceneManager.lvl7.sceneState == SceneState.DRAW) {
+					sceneManager.RemoveScene (10);
+				} else if (sceneManager.lvl8.sceneState == SceneState.DRAW) {
+					sceneManager.RemoveScene (11);
+				}
+
+				sceneManager.pMenu.sceneState = SceneState.SLEEP;
+				sceneManager.bPause.sceneState = SceneState.SLEEP;
+				sceneManager.mMenu.sceneState = SceneState.UPDATEDRAW;
 			}
 
-			if (ULvl2.changed || DLvl2.changed) {
-				sceneManager.GetScene(0).sceneState = ChangeSceneState (ULvl2._state, DLvl2._state);
-				ULvl2.changed = false;
-				DLvl2.changed = false;
-			}*/
+
 
 			base.Update (gameTime);
 		}

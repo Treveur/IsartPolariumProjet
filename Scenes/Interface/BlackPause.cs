@@ -5,16 +5,15 @@ using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 namespace IsartPolarium
 {
-	public class Bckg: AScene
+	public class BlackPause: AScene
 	{
 
-		public Bckg (SceneManager _SM) : base(_SM)
+		public BlackPause (SceneManager _SM) : base(_SM)
 		{
 		}
 
 		public override void Initialize()
 		{
-
 
 			base.Initialize ();
 		}
@@ -25,7 +24,7 @@ namespace IsartPolarium
 		public override void LoadContent()
 		{
 
-			AddEntity (new Background(this));
+			AddEntity (new BlackBackground (this));
 
 
 			base.LoadContent ();
