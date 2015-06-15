@@ -32,6 +32,8 @@ namespace IsartPolarium
 		public Level6 lvl6;
 		public Level7 lvl7;
 		public Level8 lvl8;
+		public Victory vic;
+		public Defeat def;
 
 
 
@@ -71,13 +73,18 @@ namespace IsartPolarium
 
 			igInterface.sceneState = SceneState.SLEEP;
 
-			//* A décommenter avant*//
+			//Victory Screen
+			//Victory vic = new Victory (this);
+			//AddScene (vic, 0);
+
+			//Defeat def = new Defeat (this);
+			//AddScene (def, 0);
+
 			//Level 1
-			lvl1 = new Level1 (this);
-			AddScene (lvl1, 4);
+			//lvl1 = new Level1 (this);
+			//AddScene (lvl1, 4);
 
-			lvl1.sceneState = SceneState.SLEEP;
-
+			//lvl1.sceneState = SceneState.SLEEP;
 
 			//Level 2
 			//Level2 lvl2 = new Level2 (this);
@@ -103,7 +110,10 @@ namespace IsartPolarium
 			//AddScene (lvl7, 10);
 
 			//lvl8 = new Level8 (this);
-			//AddScene (lvl8, 11);
+			//AddScene (lvl8, 7);
+						
+			//Button;
+			//AddScene(new ChangeLevel (this), 1);
 
 			imgBack = new Bckg (this);
 			AddScene (imgBack, 12);

@@ -1,0 +1,17 @@
+﻿<Properties StartupItem="IsartPolarium.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Entities\GameCase.cs">
+    <Files>
+      <File FileName="SceneManager.cs" Line="1" Column="1" />
+      <File FileName="Scenes\ChangeLevel.cs" Line="1" Column="1" />
+      <File FileName="Entities\GridCase.cs" Line="1" Column="1" />
+      <File FileName="Entities\GameCase.cs" Line="191" Column="22" />
+      <File FileName="Entities\Player.cs" Line="1" Column="1" />
+      <File FileName="Tools\AdvancedMouse.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

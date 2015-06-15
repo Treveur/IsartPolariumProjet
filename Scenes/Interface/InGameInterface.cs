@@ -89,6 +89,8 @@ namespace IsartPolarium
 					sceneState = SceneState.SLEEP;
 				}
 
+				menuBtn.changed = false;
+
 
 				//Console.WriteLine (sceneManager.);
 			} else if(resetGameBtn.changed && AdvancedMouse.OnRelease ()){

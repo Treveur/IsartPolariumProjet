@@ -1,36 +1,42 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
+
 namespace IsartPolarium
 {
-	public class Victory : AScene
+	public class Victory: AScene
 	{
-		Button ULvl1;
-		Button DLvl1;
+		//Button
+		Button nextBtn;
+		Button menuBtn;
+		Button redoBtn;
 
-		Button ULvl2;
-		Button DLvl2;
 
+
+
+		//GraphicsDeviceManager graphics;
+
+		//Game1
+		Game1 game;
 
 		public Victory (SceneManager _SM) : base(_SM)
 		{
 		}
 
-		/// <summary>
-		/// We initialize our scene
-		/// </summary>
 		public override void Initialize()
 		{
-			ULvl1 = new Button (this, "UButton");
-			ULvl1.Position = new Vector2 (40, sceneManager.graphics.PreferredBackBufferHeight - 100);
-			ULvl2 = new Button (this, "UButton");
-			ULvl2.Position = new Vector2 (90, sceneManager.graphics.PreferredBackBufferHeight - 100);
+			redoBtn = new Button (this, "resetBtn");
+			redoBtn.Position = new Vector2 ((sceneManager.graphics.PreferredBackBufferWidth / 2) - 175, (sceneManager.graphics.PreferredBackBufferHeight / 2) + 200);
+			menuBtn = new Button (this, "menuBtn");
+			menuBtn.Position = new Vector2 (sceneManager.graphics.PreferredBackBufferWidth/2, (sceneManager.graphics.PreferredBackBufferHeight/2) + 200);
+			nextBtn = new Button (this, "nextBtn");
+			nextBtn.Position = new Vector2 ((sceneManager.graphics.PreferredBackBufferWidth/2) + 175, (sceneManager.graphics.PreferredBackBufferHeight/2) + 200);
 
-			DLvl1 = new Button (this, "DButton");
-			DLvl1.Position = new Vector2 (40, sceneManager.graphics.PreferredBackBufferHeight - 50);
-			DLvl2 = new Button (this, "DButton");
-			DLvl2.Position = new Vector2 (90, sceneManager.graphics.PreferredBackBufferHeight - 50);
+
+			//Console.WriteLine ("Width : " + screenSize.Width + "Height :"+screenSize.Height);
+			//Console.WriteLine ("Width : "+ sceneManager.graphics.PreferredBackBufferWidth +" Height : " + sceneManager.graphics.PreferredBackBufferHeight);
 
 			base.Initialize ();
 		}
@@ -40,10 +46,17 @@ namespace IsartPolarium
 		/// </summary>
 		public override void LoadContent()
 		{
-			AddEntity (ULvl1);
-			AddEntity (ULvl2);
-			AddEntity (DLvl1);
-			AddEntity (DLvl2);
+
+
+			//Chargement du niveau 1
+			sceneManager.lvl1 = new Level1 (sceneManager);
+			sceneManager.AddScene (sceneManager.lvl1, 4);
+			sceneManager.lvl1.sceneState = SceneState.SLEEP;
+
+			AddEntity (nextBtn);
+			AddEntity (menuBtn);
+			AddEntity (redoBtn);
+
 
 			base.LoadContent ();
 		}
@@ -55,7 +68,27 @@ namespace IsartPolarium
 		/// <param name="gameTime">Game time.</param>
 		public override void Update (GameTime gameTime)
 		{
-			if (ULvl1.changed || DLvl1.changed) {
+			AddEntity (new VictorySprite (this));
+
+			if (GetEntitiesNbr () == 0) {	
+				//Ajout de l'entité player sur la scene
+				//AddEntity (new Player (this));
+				Player pl = new Player (this);
+				AddEntity (pl);
+			}
+
+			if (nextBtn.changed && AdvancedMouse.OnRelease ()) {
+				Console.WriteLine ("Youpi");
+
+				sceneManager.mMenu.sceneState = SceneState.SLEEP;
+				sceneManager.lvl1.sceneState = SceneState.UPDATEDRAW;
+				sceneManager.igInterface.sceneState = SceneState.UPDATEDRAW;
+
+			} else if (menuBtn.changed && AdvancedMouse.OnRelease ()) {
+				game.Quit ();
+			}
+
+			/*if (ULvl1.changed || DLvl1.changed) {
 				ChangeSceneState (ULvl1._state, DLvl1._state, sceneManager.GetScene(1));
 				ULvl1.changed = false;
 				DLvl1.changed = false;
@@ -65,7 +98,7 @@ namespace IsartPolarium
 				sceneManager.GetScene(0).sceneState = ChangeSceneState (ULvl2._state, DLvl2._state);
 				ULvl2.changed = false;
 				DLvl2.changed = false;
-			}
+			}*/
 
 			base.Update (gameTime);
 		}

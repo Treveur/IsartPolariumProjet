@@ -1,15 +1,18 @@
 ﻿<Properties StartupItem="IsartPolarium.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Scenes\Level\Level1.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Entities\BlackBackground.cs">
     <Files>
-      <File FileName="SceneManager.cs" Line="114" Column="41" />
+      <File FileName="SceneManager.cs" Line="52" Column="46" />
       <File FileName="Entities\GridCase.cs" Line="1" Column="1" />
       <File FileName="Entities\GameCase.cs" Line="1" Column="1" />
       <File FileName="Scenes\Interface\MainMenu.cs" Line="1" Column="1" />
       <File FileName="Scenes\LevelButtons.cs" Line="1" Column="1" />
-      <File FileName="Scenes\Interface\PauseMenu.cs" Line="1" Column="1" />
-      <File FileName="Scenes\Interface\InGameInterface.cs" Line="1" Column="1" />
-      <File FileName="Scenes\Level\Level1.cs" Line="43" Column="30" />
+      <File FileName="Scenes\Interface\PauseMenu.cs" Line="110" Column="38" />
+      <File FileName="Scenes\Interface\InGameInterface.cs" Line="92" Column="29" />
+      <File FileName="Scenes\Level\Level1.cs" Line="1" Column="1" />
+      <File FileName="c:\Users\Benjamin\Documents\Projet_isart\PuzzleGame\Gd1b_Groupe17_NomDuProjet\Rendu\Code\IsartPolarium\Scenes\Victory.cs" Line="1" Column="1" />
+      <File FileName="c:\Users\Benjamin\Documents\Projet_isart\PuzzleGame\Gd1b_Groupe17_NomDuProjet\Rendu\Code\IsartPolarium\Scenes\Defeat.cs" Line="1" Column="1" />
+      <File FileName="Entities\BlackBackground.cs" Line="16" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

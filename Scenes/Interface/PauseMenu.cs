@@ -81,6 +81,8 @@ namespace IsartPolarium
 				sceneState = SceneState.SLEEP;
 				sceneManager.bPause.sceneState = SceneState.SLEEP;
 
+				returnBtn.changed = false;
+
 
 			} else if(principalMenuBtn.changed && AdvancedMouse.OnReleaseState){
 				if (sceneManager.lvl1.sceneState == SceneState.DRAW) {
@@ -104,6 +106,8 @@ namespace IsartPolarium
 				sceneManager.pMenu.sceneState = SceneState.SLEEP;
 				sceneManager.bPause.sceneState = SceneState.SLEEP;
 				sceneManager.mMenu.sceneState = SceneState.UPDATEDRAW;
+
+				principalMenuBtn.changed = false;
 			}
 
 

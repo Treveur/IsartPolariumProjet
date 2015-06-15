@@ -37,10 +37,13 @@ namespace IsartPolarium
 			if (AdvancedMouse.OnClic() && hitBox.Intersects (AdvancedMouse.hitBox)) {
 				_state = !_state;
 				changed = true;
-				if (_state)
-					sprite.color = Color.White;
-				/*else
-					sprite.color = Color.Red;*/
+				if (_state) {
+					LinkSprite (specialTexLink);
+				} else {
+					LinkSprite (specialTexLink + "_negatif");
+				}
+				sprite.scale = 0.5f;
+				sprite.depth = 0.1f;
 			}
 			base.Update (gameTime);
 		}
